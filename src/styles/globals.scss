@@ -1,0 +1,49 @@
+@import "./variables.scss";
+@import "./fonts.scss";
+@import "./utils.scss";
+
+*,body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $color-dark;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: $color-white;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  font-size: 3.4rem;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 1.7em;
+  font-weight: 300;
+  @media (max-width: 576px) {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+img {
+  width: 100px;
+}
+
+@media (max-width: 768px) {
+  h1  {
+    font-size: 1.6rem;
+  }
+}

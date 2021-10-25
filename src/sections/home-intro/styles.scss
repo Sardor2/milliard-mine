@@ -1,0 +1,101 @@
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+.intro-section {
+  width: 100%;
+  height: 100%;
+  padding: 10.2rem 5rem 15rem;
+  
+  @media (max-width: 768px) {
+    padding: 1.6rem 1rem;
+  }
+  @media (max-width: 576px) {
+    padding: 5rem 1rem 0rem;
+  }
+  
+  h1 {
+    font-weight: 800;
+    font-size: 7.7rem;
+  }
+
+  &__wrapper {
+    //@include absCenter;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: space-between;
+
+    &__logo {
+      @media (max-width: 576px) {
+        margin-top: 2rem;
+      }
+    }
+
+    &__details {
+      width: 60%;
+      margin-right: 2rem;
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+
+      .footer  {
+        max-width: 40rem;
+        margin-top: 3.2rem;
+        p {
+          word-spacing: .1rem;
+
+        }
+        @media (max-width: 576px) {
+          p {
+            margin: 0;
+          }
+          margin: 2rem 0;
+        }
+      }
+
+      &__play-icon {
+        width: 4.8rem !important;
+        height: 4.8rem;
+        cursor: pointer;
+        &:active {
+          opacity: 0.8;
+        }
+      }
+      &__line  {
+        height: 0;
+        width: 8rem;
+        margin: 0 .8rem;
+        border: .2rem solid $color-white;
+      }
+    }
+
+    @media (max-width: 576px) {
+      h1  {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1rem;
+        margin-top: 2rem;
+        width: 100%;
+      }
+
+    }
+
+    img {
+      width: 34.2rem;
+      @media (max-width: 576px) {
+        width: 10rem;
+      }
+    }
+
+  }
+  
+  @media (max-width: 768px) {
+    h1  {
+      font-size: 5rem;
+    }
+    img  {
+      width: 100px;
+    }
+  }
+}
