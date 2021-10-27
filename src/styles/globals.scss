@@ -21,26 +21,36 @@ body {
   color: $color-white;
   height: 100%;
   width: 100%;
+
+
+
+}
+
+h1,h2 {
+  font-weight: 800;
 }
 
 h1 {
   font-size: 3.4rem;
 }
+h2  {
+  font-size: 4.8rem;
+}
 
 p {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   line-height: 1.7em;
-  font-weight: 300;
+  font-weight: 400;
   @media (max-width: 576px) {
     font-size: 1.4rem;
   }
 }
 
-
-
-img {
-  width: 100px;
+button {
+  font-family: 'Poppins', sans-serif;
 }
+
+
 
 @media (max-width: 768px) {
   h1  {

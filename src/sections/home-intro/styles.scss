@@ -16,6 +16,10 @@
   h1 {
     font-weight: 800;
     font-size: 7.7rem;
+    line-height: 9.8rem;
+    @media (max-width: 576px) {
+      line-height: 6.2rem;
+    }
   }
 
   &__wrapper {
