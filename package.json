@@ -30,6 +30,10 @@
     "sass": "^1.43.3"
   },
   "devDependencies": {
-    "prettier": "^2.4.1"
+    "autoprefixer": "^10.3.7",
+    "gatsby-plugin-postcss": "^5.0.0",
+    "postcss": "^8.3.11",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.17"
   }
 }

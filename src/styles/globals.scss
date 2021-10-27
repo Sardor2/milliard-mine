@@ -2,6 +2,10 @@
 @import "./fonts.scss";
 @import "./utils.scss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,body,
 html {
   margin: 0;
@@ -21,9 +25,6 @@ body {
   color: $color-white;
   height: 100%;
   width: 100%;
-
-
-
 }
 
 h1,h2 {
