@@ -4,9 +4,13 @@ const Flex = ({
   children,
   justifyContent = "normal",
   alignItems = "normal",
+  className,
   ...props
 }) => (
-  <div style={{ display: "flex", justifyContent, alignItems }} {...props}>
+  <div
+    className={className}
+    style={{ display: "flex", justifyContent, alignItems, ...props }}
+  >
     {children}
   </div>
 );

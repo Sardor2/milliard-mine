@@ -8,7 +8,7 @@ import Flex from "../../components/flex";
 const HomeIntro = () => {
   return (
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
-      <Container className={"flex-center"}>
+      <Container maxWidth={"md"} className={"flex-center"}>
         <div className={"intro-section__wrapper"}>
           <div className="intro-section__wrapper__details">
             <h1>MILLIARD BUSINESS CLUB</h1>

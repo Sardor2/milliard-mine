@@ -1,5 +1,4 @@
 import * as React from "react";
-
 import logo from "../images/logo-4x.png";
 import MainLayout from "../layouts/main-layout";
 import Header from "../components/header";
@@ -8,6 +7,7 @@ import Flex from "../components/flex";
 import Button from "../components/button";
 import HomeIntro from "../sections/home-intro";
 import "./index.scss";
+import BusinessTypes from "../sections/business-types";
 
 const HomePage = () => {
   return (
@@ -21,6 +21,7 @@ const HomePage = () => {
         </Container>
       </Header>
       <HomeIntro />
+      <BusinessTypes />
     </MainLayout>
   );
 };

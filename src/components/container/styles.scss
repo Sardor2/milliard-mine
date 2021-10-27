@@ -1,8 +1,15 @@
 .container-wrapper {
-  max-width: 1116px;
   margin: 0 auto;
 
   @media (max-width: 768px) {
     padding: 0 1.5rem;
   }
+  &-lg  {
+    max-width: 1118px;
+  }
+
+  &-md {
+    max-width: 1016px;
+  }
+
 }
