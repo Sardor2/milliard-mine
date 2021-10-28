@@ -11,7 +11,7 @@ const HomeIntro = () => {
       <Container maxWidth={"md"} className={"flex-center"}>
         <div className={"intro-section__wrapper"}>
           <div className="intro-section__wrapper__details">
-            <h1>MILLIARD BUSINESS CLUB</h1>
+            <h1 className={"mt-12"}>MILLIARD BUSINESS CLUB</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
               corporis culpa delectus deserunt eaque excepturi fuga fugiat,
