@@ -1,0 +1,54 @@
+@import "src/styles/variables";
+
+$border: 2px;
+
+
+.custom-input {
+  font-family: 'Poppins',sans-serif;
+  display: inline-block;
+  background: $linear-gold;
+  color: #FFF;
+  border-radius: .4rem;
+  padding: .1rem;
+  outline: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  &:focus-within {
+    padding: .12rem;
+  }
+
+  input {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: $color-dark;
+    z-index: 1;
+    padding: 1rem 1.4rem;
+    &:focus ~ .label, &:not(:placeholder-shown) ~ label  {
+      top: 0;
+      font-size: 12px;
+      background-color: $color-dark;
+    }
+  }
+
+  .label {
+    font-family: inherit;
+    position: absolute;
+    z-index: 2;
+    border-radius: inherit;
+    top: 50%;
+    left: 1rem;
+    padding: 0 .5rem;
+    transform: translate(0, -50%);
+    pointer-events: none;
+    transition: all 0.15s ease;
+  }
+
+}
