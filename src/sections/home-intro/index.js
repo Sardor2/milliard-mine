@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import logo from "../../images/logo-full.svg";
+import logo from "../../images/logo.svg";
 import play from "../../images/play.svg";
 import Container from "../../components/container";
 import Flex from "../../components/flex";
