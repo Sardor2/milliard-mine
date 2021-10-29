@@ -1,12 +1,15 @@
 @import "src/styles/variables";
 $border: 2px;
 .business-card {
-  padding: 3.3rem 1.3rem;
+  padding: 5px;
   min-width: 170px;
   min-height: 170px;
+  max-height: 170px;
+  max-width: 170px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
   position: relative;
   color: #FFF;
   background: $color-dark;

@@ -1,7 +1,10 @@
+@import "src/styles/variables";
+
 .business-types {
   padding: 20rem 0;
   text-align: center;
-
+  background-color: $color-dark;
+  z-index: -2;
   h2 {
     margin-bottom: 12rem;
   }
@@ -10,24 +13,7 @@
     max-width: 100%;
     overflow-x: scroll;
     padding-bottom: 15rem;
-    //max-height: 100px;
 
-    ::-webkit-scrollbar {
-      width: 10px;
-      opacity: 0.8;
-    }
-
-    ::-webkit-scrollbar-track {
-      background-color: red;
-      border: 3px solid red;
-      border-radius: 20px;
-      width: 300px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: red;
-      border-radius: 20px;
-    }
   }
 
   .corousel {
