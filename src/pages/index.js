@@ -8,6 +8,8 @@ import Button from "../components/button";
 import HomeIntro from "../sections/home-intro";
 import "./index.scss";
 import BusinessTypes from "../sections/business-types";
+import { Link } from "gatsby";
+import Footer from "../components/footer";
 
 const HomePage = () => {
   return (
@@ -15,7 +17,9 @@ const HomePage = () => {
       <Header>
         <Container>
           <Flex justifyContent={"space-between"} alignItems={"center"}>
-            <img className={"logo"} src={logo} alt="" />
+            <Link to="/">
+              <img className={"logo"} src={logo} alt="" />
+            </Link>
             <Button variant={"outlined"}>Contact</Button>
           </Flex>
         </Container>
