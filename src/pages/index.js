@@ -8,6 +8,8 @@ import Button from "../components/button";
 import HomeIntro from "../sections/home-intro";
 import "./index.scss";
 import BusinessTypes from "../sections/business-types";
+import Contact from "../sections/contact";
+import { Link } from "gatsby";
 
 const HomePage = () => {
   return (
@@ -15,13 +17,15 @@ const HomePage = () => {
       <Header>
         <Container>
           <Flex justifyContent={"space-between"} alignItems={"center"}>
-            <img className={"logo"} src={logo} alt="" />
+            <img className={"logo"} src={logo} alt="milliard-club" />
+            <Link to={"/about"}>About</Link>
             <Button variant={"outlined"}>Contact</Button>
           </Flex>
         </Container>
       </Header>
       <HomeIntro />
       <BusinessTypes />
+      <Contact />
     </MainLayout>
   );
 };
