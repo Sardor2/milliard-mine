@@ -3,17 +3,16 @@
 $border: 2px;
 
 
-.custom-input {
+.custom-text-area {
   font-family: 'Poppins',sans-serif;
   display: inline-block;
   color: #FFF;
   border-radius: .4rem;
   outline: none;
-  width: 100%;
-
   font-size: 1.6rem;
   font-weight: 400;
   position: relative;
+  width: 100%;
 
   .border {
     position: absolute;
@@ -29,11 +28,12 @@ $border: 2px;
     //border: 1px solid gold;
 
   }
-  input {
+  textarea {
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
     position: relative;
+    width: 100%;
     display: inherit;
     border-radius: inherit;
     margin: 0;
@@ -41,12 +41,15 @@ $border: 2px;
     outline: none;
     background-color: $color-dark;
     z-index: 2;
-    width: 100%;
     padding: 1rem 1.4rem;
+    max-height: 15rem;
+    height: 15rem;
+    min-height: 15rem;
+    resize: none;
 
 
     &:focus ~ .label, &:not(:placeholder-shown) ~ label  {
-      top: 0;
+      top: -10px;
       font-size: 12px;
       background-color: $color-dark;
       color: $color-white;
@@ -74,10 +77,9 @@ $border: 2px;
     z-index: 2;
     border-radius: inherit;
     color: $color-text-secondary;
-    top: 50%;
+    top: 1.7rem;
     left: 1rem;
     padding: 0 .5rem;
-    transform: translate(0, -50%);
     pointer-events: none;
     transition: all 0.15s ease;
   }

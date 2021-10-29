@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles.scss";
 
-const Input = ({ label = "Label", placeholder = " ", ...props }) => {
+const TextArea = ({ placeholder = " ", label, ...props }) => {
   return (
-    <div className="custom-input relative inline-block">
-      <input {...props} placeholder={placeholder} />
+    <div className="custom-text-area relative inline-block">
+      <textarea {...props} placeholder={placeholder} />
       <label className={"label"} htmlFor={props.id}>
         {label}
       </label>
@@ -13,4 +13,4 @@ const Input = ({ label = "Label", placeholder = " ", ...props }) => {
   );
 };
 
-export default Input;
+export default TextArea;
