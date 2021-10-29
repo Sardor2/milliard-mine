@@ -1,0 +1,70 @@
+@import "src/styles/variables";
+.contact-section {
+  //background-color: $color-dark;
+  .contact-box {
+    position: relative;
+    max-width: 95rem;
+    margin: 0 auto 5rem;
+    border-radius: 1rem;
+    padding: 3rem;
+    font-family: 'Poppins', sans-serif;
+    background-clip: padding-box;
+    color: #FFF;
+    background: $color-dark-2;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -2px;
+      border-radius: inherit;
+      background: $linear-gold;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    h4 {
+      font-size: 2rem;
+      margin-bottom: 2.6rem;
+      font-weight: 500;
+    }
+    .address-box {
+        font-weight: 400;
+        font-size: 1.6rem;
+      address {
+        font-style: normal;
+      }
+      a {
+        margin-top: 2rem;
+
+      }
+    }
+
+    .socials {
+      display: flex;
+
+      .social-icon {
+        height: 1.6rem;
+
+
+        &:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+
+    .map-box {
+      img {
+        width: 34.8rem;
+        max-width: 100%;
+      }
+      margin-top: 3rem;
+    }
+  }
+}

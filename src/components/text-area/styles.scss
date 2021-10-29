@@ -1,0 +1,87 @@
+@import "src/styles/variables";
+
+$border: 2px;
+
+
+.custom-text-area {
+  font-family: 'Poppins',sans-serif;
+  display: inline-block;
+  color: #FFF;
+  border-radius: .4rem;
+  outline: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  position: relative;
+  width: 100%;
+
+  .border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: .4rem;
+    margin: -1px;
+    z-index: 1;
+    background: $linear-gold;
+    border: none;
+    //border: 1px solid gold;
+
+  }
+  textarea {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    position: relative;
+    width: 100%;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: $color-dark;
+    z-index: 2;
+    padding: 1rem 1.4rem;
+    max-height: 15rem;
+    height: 15rem;
+    min-height: 15rem;
+    resize: none;
+
+
+    &:focus ~ .label, &:not(:placeholder-shown) ~ label  {
+      top: -10px;
+      font-size: 12px;
+      background-color: $color-dark;
+      color: $color-white;
+    }
+
+    &:focus ~ .border {
+      margin: -2px;
+    }
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    &:focus  {
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+  }
+
+  .label {
+    font-family: inherit;
+    font-weight: inherit;
+    position: absolute;
+    z-index: 2;
+    border-radius: inherit;
+    color: $color-text-secondary;
+    top: 1.7rem;
+    left: 1rem;
+    padding: 0 .5rem;
+    pointer-events: none;
+    transition: all 0.15s ease;
+  }
+
+}

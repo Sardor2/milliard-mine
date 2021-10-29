@@ -6,20 +6,4 @@
   align-items: center;
 }
 
-$border: 2px;
 
-.gold-box {
-  position: relative;
-  background-clip: padding-box;
-  border: solid 1px transparent;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    z-index: -1;
-    margin: -$border;
-    border-radius: inherit;
-    background: $linear-gold;
-  }
-}

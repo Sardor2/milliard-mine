@@ -10,6 +10,7 @@ import "./index.scss";
 import BusinessTypes from "../sections/business-types";
 import { Link } from "gatsby";
 import Footer from "../components/footer";
+import Contact from "../sections/contact";
 
 const HomePage = () => {
   return (
@@ -20,12 +21,14 @@ const HomePage = () => {
             <Link to="/">
               <img className={"logo"} src={logo} alt="" />
             </Link>
+            <Link to={"/about"}>About</Link>
             <Button variant={"outlined"}>Contact</Button>
           </Flex>
         </Container>
       </Header>
       <HomeIntro />
       <BusinessTypes />
+      <Contact />
     </MainLayout>
   );
 };
