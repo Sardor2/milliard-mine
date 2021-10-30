@@ -11,7 +11,7 @@ import twitter from "../../images/icons/Twitter.svg";
 
 const Contact = () => {
   return (
-    <section className="p-20 pt-40 contact-section  " id={"contact"}>
+    <section className="p-10 lg:p-20 pt-24 contact-section  " id={"contact"}>
       <div className="contact-box">
         <h2>Investitsiya kiritish yoki investor bo’lish!</h2>
         <form className="flex justify-between flex-wrap mt-20">

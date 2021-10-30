@@ -9,7 +9,6 @@ import HomeIntro from "../sections/home-intro";
 import "./index.scss";
 import BusinessTypes from "../sections/business-types";
 import { Link } from "gatsby";
-import Footer from "../components/footer";
 import Contact from "../sections/contact";
 
 const HomePage = () => {
