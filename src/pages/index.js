@@ -1,5 +1,5 @@
 import * as React from "react";
-import logo from "../images/logo-4x.png";
+import logo from "../images/logo.svg";
 import MainLayout from "../layouts/main-layout";
 import Header from "../components/header";
 import Container from "../components/container";
