@@ -20,8 +20,9 @@ const HomePage = () => {
             <Link to="/">
               <img className={"logo"} src={logo} alt="" />
             </Link>
-            <Link to={"/about"}>About</Link>
-            <Button variant={"outlined"}>Contact</Button>
+            <Link to={"/contact"}>
+              <Button variant={"outlined"}>Contact</Button>
+            </Link>
           </Flex>
         </Container>
       </Header>
