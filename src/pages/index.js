@@ -10,6 +10,7 @@ import "./index.scss";
 import BusinessTypes from "../sections/business-types";
 import { Link } from "gatsby";
 import Contact from "../sections/contact";
+import ClubMembers from "../sections/club-members";
 
 const HomePage = () => {
   return (
@@ -27,6 +28,8 @@ const HomePage = () => {
         </Container>
       </Header>
       <HomeIntro />
+
+      <ClubMembers />
       <BusinessTypes />
       <Contact />
     </MainLayout>
