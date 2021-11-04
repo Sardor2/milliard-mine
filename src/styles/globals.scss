@@ -52,6 +52,31 @@ button {
 }
 
 
+// swiper styles
+.swiper-button-next, .swiper-button-prev {
+  color: $color-white !important;
+  &:after {
+    font-size: 4rem !important;
+
+    @media(max-width: 576px) {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+.swiper-button-disabled {
+  visibility: hidden !important;
+}
+
+.swiper-pagination-progressbar {
+  .swiper-pagination-progressbar-fill {
+    background-color: $color-white !important;
+    border-radius: 2.1rem !important;
+  }
+  border-radius: 2.1rem !important;
+}
+
+
 
 @media (max-width: 768px) {
   h1  {

@@ -101,8 +101,8 @@ const ClubMembers = () => {
                 spaceBetween: 20,
               },
               640: {
-                slidesPerView: 7,
-                spaceBetween: 40,
+                slidesPerView: 5,
+                spaceBetween: 50,
               },
             }}
           >
