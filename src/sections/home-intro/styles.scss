@@ -10,7 +10,7 @@
     padding: 1.6rem 1rem;
   }
   @media (max-width: 576px) {
-    padding: 5rem 1rem 0rem;
+    padding: 5rem 1rem 10rem;
   }
   
   h1 {
@@ -28,6 +28,8 @@
     flex-wrap: wrap;
     max-width: 1000px;
     justify-content: space-between;
+
+    animation: fromleft 1.5s linear;
 
     &__logo {
       @media (max-width: 576px) {
@@ -101,5 +103,17 @@
     img  {
       width: 100px;
     }
+  }
+}
+
+@keyframes fromleft {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
   }
 }
