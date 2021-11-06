@@ -18,10 +18,10 @@ const Contact = () => {
           <div className="flex flex-col lg:w-7/12 lg:max-w-2xl">
             <h4>Xabaringizni quyida qoldiring!</h4>
             <div className="mb-9">
-              <Input label={"Name"} type={"text"} />
+              <Input label="Name" type="text" />
             </div>
             <div className="mb-9">
-              <Input label={"Email"} type={"email"} />
+              <Input label="Email" type="email" />
             </div>
             <div className="mb-9">
               <TextArea label={"Your message"} />
@@ -31,7 +31,7 @@ const Contact = () => {
           <div className="flex flex-col pt-16 lg:w-5/12  lg:ml-10">
             <div className="address-box flex flex-col lg:pl-8">
               <address>
-                Toshkent shahar, qayerdir kocha, 17 Nimadirni ro’parasida
+                Toshkent shahar, qayerdir kocha 17 Nimadirni ro’parasida
               </address>
               <a className="phone" href="tel:+998 550 55 50">
                 +998 550 55 50
