@@ -7,6 +7,7 @@
 }
 
 .btn {
+  position: relative;
   padding: 1.4rem 2.4rem;
   border: .1rem solid transparent;
   border-radius: .4rem;
@@ -43,4 +44,15 @@
     @include borderGold
   }
 
+  .loader-img {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.loading {
+  color: transparent;
 }

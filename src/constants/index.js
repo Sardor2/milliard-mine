@@ -97,3 +97,5 @@ export const BUSINESSES = [
     img: uluqu,
   },
 ];
+
+export const BASE_URL = "https://e026-195-158-9-82.ngrok.io/api/site/";
