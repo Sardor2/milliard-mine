@@ -40,11 +40,9 @@ $border: 2px;
     background-color: $color-dark;
     z-index: 2;
     padding: 1rem 1.4rem;
-    max-height: 15rem;
     height: 15rem;
     min-height: 15rem;
     resize: none;
-
 
     &:focus ~ .label, &:not(:placeholder-shown) ~ label  {
       top: -10px;
