@@ -33,7 +33,7 @@ const MEMBERS = Array(20)
 
 SwiperCore.use([Navigation, Thumbs]);
 
-const ClubMembers = () => {
+const ClubMembers = ({ members }) => {
   const [currentMember, setCurrentMember] = React.useState(null);
 
   return (

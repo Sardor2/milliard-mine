@@ -98,4 +98,4 @@ export const BUSINESSES = [
   },
 ];
 
-export const BASE_URL = "https://e026-195-158-9-82.ngrok.io/api/site/";
+export const BASE_URL = "http://api.milliard.uz/api/site/";
