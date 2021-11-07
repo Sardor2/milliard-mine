@@ -11,6 +11,11 @@
       gap: 20px;
       div {
         flex: none;
+        &:first-child {
+          @media (max-width: 375px) {
+            flex: 30%;
+          }
+        }
         &:last-child {
           flex: 50%;
         }
@@ -77,6 +82,25 @@
       -moz-background-clip: text;
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .about {
+    padding: 5rem 0 6rem;
+    &-wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+    &Teaser,
+    &Img {
+      margin-top: 2rem;
+      width: auto;
+      max-width: 600px;
+    }
+    .counter {
+      margin-top: 3rem;
     }
   }
 }

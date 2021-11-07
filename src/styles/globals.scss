@@ -127,3 +127,10 @@ button {
     transform: translateX(-100%);
   }
 }
+
+@media (max-width: 767px) {
+  .animTextLine {
+    font-size: 2rem;
+    top: -3px;
+  }
+}

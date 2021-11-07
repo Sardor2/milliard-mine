@@ -10,7 +10,7 @@ const About = () => {
   return (
     <section className={"about"} id={"about"}>
       <Container>
-        <div className="flex gap-16">
+        <div className="about-wrap flex gap-16">
           <div className="aboutImg flex flex-col">
             <div className="aboutImg-top flex flex-wrap">
               <div className="aboutImg-item">

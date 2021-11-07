@@ -27,11 +27,11 @@ const BusinessTypes = () => {
         className="business-swiper"
         breakpoints={{
           320: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 0,
           },
           640: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 10,
           },
           968: {
