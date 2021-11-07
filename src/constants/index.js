@@ -15,6 +15,47 @@ import productuz from "../images/businesses/productuz-1 1.svg";
 import zeplit from "../images/businesses/zeplin.svg";
 import uluqu from "../images/businesses/uluqi.svg";
 
+//masonry-images
+import img1 from "../images/masonry/img-1.jpg";
+import img2 from "../images/masonry/img-2.jpg";
+import img3 from "../images/masonry/img-3.jpg";
+import img4 from "../images/masonry/img-4.jpg";
+import img5 from "../images/masonry/img-5.jpg";
+import img6 from "../images/masonry/img-6.jpg";
+
+export const MASONRY_IMAGES = [
+  {
+    title: "Some project title",
+    date: "10.30.2012",
+    image: img1,
+  },
+  {
+    title: "Some project title",
+    date: "10.30.2012",
+    image: img2,
+  },
+  {
+    title: "Some project title",
+    date: "10.30.2012",
+    image: img3,
+  },
+  {
+    title: "Some project title",
+    date: "10.30.2012",
+    image: img4,
+  },
+  {
+    title: "Some project title",
+    date: "10.30.2012",
+    image: img5,
+  },
+  {
+    title: "Some project title",
+    date: "10.30.2012",
+    image: img6,
+  },
+];
+
 export const BUSINESSES = [
   {
     title: "Microsoft",
@@ -98,4 +139,4 @@ export const BUSINESSES = [
   },
 ];
 
-export const BASE_URL = "https://e026-195-158-9-82.ngrok.io/api/site/";
+export const BASE_URL = "http://api.milliard.uz/api/site/";
