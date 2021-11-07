@@ -14,8 +14,7 @@ const Projects = ({ projects }) => {
   return (
     <section id="projects" className="projects-section">
       <Container maxWidth="md">
-        <h2>Projects</h2>
-
+        <h2>Uchrashuvlardan lavhalar</h2>
         <div className="my-masonry-grid">
           {MASONRY_IMAGES.map((project, index) => (
             <div key={index} className="project-card">

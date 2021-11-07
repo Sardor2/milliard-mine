@@ -1,0 +1,74 @@
+@import "src/styles/variables.scss";
+
+#partners {
+  padding: 15rem 0;
+
+  h3 {
+    background-image: $linear-gold;
+    color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-top: .8rem;
+    font-size: 1.8rem;
+  }
+
+  .box {
+    //padding: 3.3rem 2.5rem;
+    background-color: $color-white;
+    width: 17.6rem;
+    height: 9.6rem;
+    color: $color-dark;
+    border-radius: 1.6rem;
+    box-shadow: 0px 3rem 4rem rgba(212, 217, 232, 0.2);
+
+    .image {
+      max-width: 60%;
+    }
+  }
+
+  .partners-swiper {
+    margin-top: 13rem;
+    //padding-right: 3rem;
+    padding-left: 2rem;
+    //overflow: unset;
+
+    .swiper-button-next,.swiper-button-prev {
+      color: gray !important;
+
+      &:after {
+        font-size: 2.5rem !important;
+      }
+    }
+
+    .swiper-button-next {
+      right: 0rem;
+    }
+
+    .swiper-slide {
+    }
+
+    .swiper-wrapper {
+    }
+
+    .swiper-button-prev {
+      left: 0;
+    }
+  }
+
+
+  @media (max-width: 576px) {
+
+
+    padding: 6rem 0;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+    .partners-swiper {
+      margin-top: 6rem;
+    }
+  }
+
+
+
+}
