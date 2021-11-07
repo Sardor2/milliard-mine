@@ -14,10 +14,12 @@ import Contact from "../sections/contact";
 import ClubMembers from "../sections/club-members";
 import useHomePageData from "../services/use-home-page-data";
 import PageSpinner from "../components/page-spinner";
+import About from "../sections/about";
 import Projects from "../sections/projects";
 
 const HomePage = () => {
   const { loading, data } = useHomePageData();
+  console.log(data);
   return (
     <PageSpinner loading={loading}>
       <MainLayout>
@@ -36,7 +38,7 @@ const HomePage = () => {
           </Container>
         </Header>
         <HomeIntro />
-
+        <About />
         <BusinessTypes />
         <ClubMembers />
         <Projects projects={data?.images} />

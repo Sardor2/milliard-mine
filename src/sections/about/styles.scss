@@ -1,9 +1,106 @@
-.about-section {
-  &__images {
-
+.about {
+  padding: 12rem 0 10rem;
+  &Img {
+    width: 50%;
+    gap: 20px;
+    &-top {
+      gap: 20px;
+      align-items: flex-end;
+    }
+    &-bottom {
+      gap: 20px;
+      div {
+        flex: none;
+        &:first-child {
+          @media (max-width: 375px) {
+            flex: 30%;
+          }
+        }
+        &:last-child {
+          flex: 50%;
+        }
+      }
+    }
+    &-item {
+      flex: 0 0 calc(50% - 10px);
+    }
   }
 
-  &__details {
+  &Teaser {
+    width: 50%;
+    margin-top: 6.5rem;
+    &-title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  .counter {
+    margin-top: 7.5rem;
+    gap: 30px;
+    &-item {
+      flex: calc(50% - 20px);
+      position: relative;
+      padding-bottom: 2rem;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          #7a7a7a 0%,
+          #bd9555 30%,
+          #d7c982 51.45%,
+          #fcefcf 63.52%,
+          #e1b16e 77.59%,
+          #9a783a 100%
+        );
+      }
+    }
+    &-numb {
+      font-size: 4.8rem;
+      font-weight: 800;
+    }
+    &-title {
+      font-size: 1.6rem;
+      background: linear-gradient(
+        90deg,
+        #7a7a7a 0%,
+        #bd9555 30%,
+        #d7c982 51.45%,
+        #fcefcf 63.52%,
+        #e1b16e 77.59%,
+        #9a783a 100%
+      );
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-text-fill-color: transparent;
+    }
+  }
+}
 
+@media (max-width: 991px) {
+  .about {
+    padding: 5rem 0 6rem;
+    &-wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+    &Teaser,
+    &Img {
+      margin-top: 2rem;
+      width: auto;
+      max-width: 600px;
+    }
+    .counter {
+      margin-top: 3rem;
+    }
   }
 }

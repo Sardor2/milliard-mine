@@ -16,7 +16,7 @@ const Footer = () => (
           <img className={"logo"} src={logo} alt="" />
         </Link>
         <div className="flex max-w-3xl">
-          <div className="mx-40">
+          <div className="mx-10 md:mx-20 lg:mx-40">
             <div className="font-bold text-4xl mb-5">Support</div>
             <div className="flex flex-col">
               <Link to="" className="mb-2">
