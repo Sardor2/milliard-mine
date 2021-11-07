@@ -27,8 +27,8 @@ const Partners = ({ partners }) => {
           className="partners-swiper"
           breakpoints={{
             320: {
-              slidesPerView: 2,
-              spaceBetween: 0,
+              slidesPerView: 3,
+              spaceBetween: 5,
             },
             640: {
               slidesPerView: 3,
