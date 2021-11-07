@@ -4,14 +4,12 @@ section.club-members {
   padding: 20rem 0;
   position: relative;
   background-color: $color-dark;
-
+  z-index: 0;
   @media (max-width: 768px) {
     padding: 5rem 0;
-
   }
 
   @media (max-width: 576px) {
-
     h2 {
       font-size: 1.8rem;
       text-align: center;
@@ -28,24 +26,22 @@ section.club-members {
     border: 1px solid transparent;
 
     &:hover {
-       border: 1px solid #fff;
+      border: 1px solid #fff;
     }
   }
 
   .circles {
     z-index: -1;
     position: absolute;
-    top: 8rem;
-    left: 25rem;
+    top: 4rem;
+    left: 0;
 
     @media (max-width: 768px) {
       max-width: 200px;
       left: 0;
       top: 2rem;
     }
-
   }
-
 
   .current-member {
     display: flex;
@@ -60,7 +56,7 @@ section.club-members {
       h3 {
         font-size: 4.3rem;
         font-weight: 800;
-        margin-bottom: .8rem;
+        margin-bottom: 0.8rem;
       }
 
       p {
@@ -76,7 +72,7 @@ section.club-members {
 
       .website-link {
         font-size: 1.8rem;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
         margin-left: 30px;
         &:hover {
           transform: translate(10px);
@@ -102,8 +98,8 @@ section.club-members {
       flex-direction: column;
 
       &-img {
-          margin-bottom: 3rem;
-          max-width: 100%;
+        margin-bottom: 3rem;
+        max-width: 100%;
       }
 
       .website-link {
@@ -118,9 +114,10 @@ section.club-members {
           font-size: 2.4rem;
         }
 
-        p,.website-link,button {
+        p,
+        .website-link,
+        button {
           font-size: 1.2rem;
-
         }
 
         p {
@@ -132,15 +129,16 @@ section.club-members {
 
   .members {
     position: relative;
-    margin-top: 10rem;
+    margin-top: 6rem;
     max-width: 100%;
     overflow: hidden;
+    z-index: 1;
     .each-member {
       width: 100%;
       cursor: pointer;
       transition: all 1s ease;
       &:hover {
-        transform: translateY(-.5rem);
+        transform: translateY(-0.5rem);
       }
     }
 
@@ -158,39 +156,43 @@ section.club-members {
   }
 }
 
-
-
 .swiper {
-  //width: 100%;
-  //height: 100%;
-}
-//
-.swiper-slide {
-  //text-align: center;
-  //min-height: 500px;
-  //font-size: 18px;
-  //background: #fff;
-  //color: black;
-  //display: -webkit-box;
-  //display: -ms-flexbox;
-  //display: -webkit-flex;
-  //display: flex;
-  //-webkit-box-pack: center;
-  //-ms-flex-pack: center;
-  //-webkit-justify-content: center;
-  //justify-content: center;
-  //-webkit-box-align: center;
-  //-ms-flex-align: center;
-  //-webkit-align-items: center;
-  //align-items: center;
-
+  &-slide {
+    &-thumb {
+      &-active {
+        .each-member {
+          transform: translateY(-0.5rem);
+        }
+        img {
+          filter: grayscale(0.3);
+          transition: 0.2s ease;
+        }
+      }
+    }
+  }
 }
 
-
-
-.swiper-slide img {
-  //display: block;
-  //width: 100%;
-  //height: 100%;
-  //object-fit: cover;
+.mySwiper {
+  position: relative;
+  &::after {
+    content: "";
+    box-shadow: 37px 0 120px 140px rgba(24, 25, 31, 0.7);
+    top: 0;
+    margin-left: -30px;
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    box-shadow: 37px 0 120px 140px rgba(24, 25, 31, 0.7);
+    top: 0;
+    right: 0;
+    margin-right: -30px;
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    z-index: 2;
+  }
 }

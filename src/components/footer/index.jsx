@@ -1,6 +1,10 @@
 import * as React from "react";
 import "./styles.scss";
 import logo from "../../images/logo-4x.png";
+import facebook from "../../images/icons/Facebook.svg";
+import instagram from "../../images/icons/Instagram.svg";
+import twitter from "../../images/icons/Twitter.svg";
+import youtube from "../../images/icons/Youtube.svg";
 import Container from "../container";
 import { Link } from "gatsby";
 
@@ -31,7 +35,20 @@ const Footer = () => (
           </div>
           <div className="social">
             <div className="font-bold text-4xl mb-5">Social</div>
-            <div className="flex"></div>
+            <div className="social-links flex">
+              <a className="mr-7" href="#facebook">
+                <img src={facebook} alt="facebook" />
+              </a>
+              <a className="mr-7" href="#instagram">
+                <img src={instagram} alt="instagram" />
+              </a>
+              <a className="mr-7" href="#twitter">
+                <img src={twitter} alt="twitter" />
+              </a>
+              <a className="mr-7" href="#youtube">
+                <img src={youtube} alt="yotube" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

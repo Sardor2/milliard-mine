@@ -5,13 +5,7 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/thumbs";
 import "./styles.scss";
-import SwiperCore, {
-  Navigation,
-  FreeMode,
-  Thumbs,
-  EffectFade,
-  Pagination,
-} from "swiper";
+import SwiperCore, { Navigation, FreeMode, Thumbs, Pagination } from "swiper";
 import Container from "../../components/container";
 import Button from "../../components/button";
 import facebook from "../../images/icons/Facebook.svg";
@@ -44,12 +38,23 @@ const ClubMembers = () => {
 
   return (
     <section id="club-members" className="club-members">
+      <div className="animText">
+        <div className="animTextLine">
+          CLub members - community - Give million - get billion - give million -
+          get billion
+        </div>
+        <div className="animTextLine">
+          CLub members - community - Give million - get billion - give million -
+          get billion
+        </div>
+      </div>
       <Container maxWidth={"md"}>
         <h2 className="text-left">Klub a'zolari</h2>
         <Swiper
           navigation={true}
           thumbs={{ swiper: currentMember }}
           className="mySwiper2"
+          speed={700}
         >
           {MEMBERS.map((member) => (
             <SwiperSlide key={member.name}>
@@ -98,18 +103,22 @@ const ClubMembers = () => {
             breakpoints={{
               320: {
                 slidesPerView: 3,
-                spaceBetween: 20,
+                spaceBetween: 2,
               },
               640: {
-                slidesPerView: 5,
-                spaceBetween: 50,
+                slidesPerView: 7,
+                spaceBetween: 5,
               },
             }}
           >
             {MEMBERS.map((member, index) => (
               <SwiperSlide key={member.name}>
                 <div className={"each-member"}>
-                  <img src={member.img} alt="member" />
+                  <img
+                    className="filter grayscale"
+                    src={member.img}
+                    alt="member"
+                  />
                 </div>
               </SwiperSlide>
             ))}

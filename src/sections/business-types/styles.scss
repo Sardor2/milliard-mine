@@ -1,37 +1,27 @@
 @import "src/styles/variables";
 
 section.business-types {
-  padding: 20rem 5rem 30rem;
-  padding-right: 0;
+  padding: 15rem 30px 20rem;
   text-align: center;
   position: relative;
   background-color: $color-dark;
-  z-index: -2;
   h2 {
     margin-bottom: 10rem;
   }
 
-  .scroller {
-    max-width: 100%;
-    //padding-bottom: 15rem;
-  }
-  .corousel {
-    position: absolute;
-    left: 5rem;
-  }
-
-  .my-swiper {
-    margin-left: 10rem;
-    margin-right: 3rem;
-    position: unset;
-    //right: 0;
+  .business-swiper {
+    padding: 0 30px;
+    padding-bottom: 15rem;
+    overflow: hidden;
   }
 
   .swiper-button-next {
-    right: 7rem;
-    z-index: 2;
-    //top: 50%;
-    //transform: translateY(-50%);
+    right: 0;
+    top: 80px;
+  }
+  .swiper-button-prev {
+    left: 0;
+    top: 80px;
   }
 
   .swiper-slide {
@@ -42,17 +32,30 @@ section.business-types {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 1rem;
-    width: 10rem;
+    right: -6rem;
+    width: 20rem;
     height: 62.6rem;
     background-color: $color-dark;
-    filter: blur(10rem);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .left-blur {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -6rem;
+    width: 20rem;
+    height: 62.6rem;
+    background-color: $color-dark;
+    filter: blur(60px);
     pointer-events: none;
     z-index: 1;
   }
 
   .swiper-pagination-progressbar {
-    bottom: 15rem;
+    bottom: 0;
     z-index: 2;
     width: 50%;
     max-width: 322px;
@@ -62,8 +65,8 @@ section.business-types {
     border-radius: 2.1rem !important;
   }
   @media (max-width: 968px) {
-    .my-swiper {
-      margin-left: 5rem
+    .business-swiper {
+      margin-left: 5rem;
     }
   }
 
@@ -71,9 +74,8 @@ section.business-types {
     padding: 10rem 2rem;
     padding-left: 0;
 
-
-    .my-swiper {
-      margin-left: 3rem
+    .business-swiper {
+      margin-left: 3rem;
     }
     .swiper-button-next {
       right: 2rem;
@@ -83,7 +85,6 @@ section.business-types {
       bottom: 2rem;
       width: 70%;
     }
-
   }
 
   @media (max-width: 576px) {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import logo from "../images/logo.svg";
+import logo from "../images/logo-4x.png";
 import MainLayout from "../layouts/main-layout";
 import Header from "../components/header";
 import Container from "../components/container";
@@ -9,6 +9,7 @@ import HomeIntro from "../sections/home-intro";
 import "./index.scss";
 import BusinessTypes from "../sections/business-types";
 import { Link } from "gatsby";
+import Footer from "../components/footer";
 import Contact from "../sections/contact";
 import ClubMembers from "../sections/club-members";
 import useHomePageData from "../services/use-home-page-data";
@@ -23,7 +24,9 @@ const HomePage = () => {
           <Container>
             <Flex justifyContent={"space-between"} alignItems={"center"}>
               <Link to="/">
-                <img className={"logo"} src={logo} alt="" />
+                <div>
+                  <img className={"logo"} src={logo} alt="" />
+                </div>
               </Link>
               <Link to={"/contact"}>
                 <Button variant={"outlined"}>Contact</Button>
@@ -32,8 +35,9 @@ const HomePage = () => {
           </Container>
         </Header>
         <HomeIntro />
-        <ClubMembers />
+
         <BusinessTypes />
+        <ClubMembers />
         <Contact />
       </MainLayout>
     </PageSpinner>
