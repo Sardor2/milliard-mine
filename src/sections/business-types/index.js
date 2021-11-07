@@ -24,7 +24,7 @@ const BusinessTypes = () => {
         pagination={{
           type: "progressbar",
         }}
-        className="my-swiper"
+        className="business-swiper"
         breakpoints={{
           320: {
             slidesPerView: 3,
@@ -44,11 +44,12 @@ const BusinessTypes = () => {
           .fill(1)
           .map((item, i) => (
             <SwiperSlide>
-              <BusinessCard key={i} img={swap} name={"Savod sotiq"} />
+              <BusinessCard key={i} img={swap} name={"Savdo sotiq"} />
             </SwiperSlide>
           ))}
+        <div className="left-blur"></div>
+        <div className="right-blur"></div>
       </Swiper>
-      <div className="right-blur"></div>
     </section>
   );
 };

@@ -6,7 +6,8 @@
 @tailwind components;
 @tailwind utilities;
 
-*,body,
+*,
+body,
 html {
   margin: 0;
   padding: 0;
@@ -27,14 +28,15 @@ body {
   width: 100%;
 }
 
-h1,h2 {
+h1,
+h2 {
   font-weight: 800;
 }
 
 h1 {
   font-size: 3.4rem;
 }
-h2  {
+h2 {
   font-size: 4.8rem;
 }
 
@@ -48,17 +50,17 @@ p {
 }
 
 button {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-
 // swiper styles
-.swiper-button-next, .swiper-button-prev {
+.swiper-button-next,
+.swiper-button-prev {
   color: $color-white !important;
   &:after {
     font-size: 4rem !important;
 
-    @media(max-width: 576px) {
+    @media (max-width: 576px) {
       font-size: 2rem !important;
     }
   }
@@ -76,10 +78,45 @@ button {
   border-radius: 2.1rem !important;
 }
 
-
-
 @media (max-width: 768px) {
-  h1  {
+  h1 {
     font-size: 1.6rem;
+  }
+}
+
+// Animation text
+
+.animText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-white;
+  z-index: 6;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  min-width: 100%;
+  white-space: nowrap;
+  &Line {
+    display: flex;
+    flex-shrink: 0;
+    color: $color-dark;
+    font-weight: 800;
+    font-size: 3.6rem;
+    padding: 0 5px;
+    text-transform: uppercase;
+    position: relative;
+    transform: translateX(0);
+    animation: animText 20s linear infinite;
+  }
+}
+
+@keyframes animText {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
