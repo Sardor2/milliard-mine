@@ -15,6 +15,14 @@ import productuz from "../images/businesses/productuz-1 1.svg";
 import zeplit from "../images/businesses/zeplin.svg";
 import uluqu from "../images/businesses/uluqi.svg";
 
+//partner images
+
+import google from "../images/partners/google.png";
+import oyo from "../images/partners/oyo.png";
+import airbnb from "../images/partners/airbnb.png";
+import fedex from "../images/partners/fedex.png";
+import amazon from "../images/partners/amazon.png";
+
 //masonry-images
 import img1 from "../images/masonry/img-1.jpg";
 import img2 from "../images/masonry/img-2.jpg";
@@ -136,6 +144,51 @@ export const BUSINESSES = [
     title: "Uluqu",
     id: 16,
     img: uluqu,
+  },
+];
+
+export const PARTNERS = [
+  {
+    img: google,
+    title: "google",
+  },
+
+  {
+    img: amazon,
+    title: "amazon",
+  },
+  {
+    img: fedex,
+    title: "fedex",
+  },
+  {
+    img: airbnb,
+    title: "airbnb",
+  },
+  {
+    img: oyo,
+    title: "oyo",
+  },
+  {
+    img: google,
+    title: "google",
+  },
+
+  {
+    img: amazon,
+    title: "amazon",
+  },
+  {
+    img: fedex,
+    title: "fedex",
+  },
+  {
+    img: airbnb,
+    title: "airbnb",
+  },
+  {
+    img: oyo,
+    title: "oyo",
   },
 ];
 
