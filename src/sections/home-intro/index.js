@@ -4,6 +4,9 @@ import logo from "../../images/banner_logo.png";
 import play from "../../images/play.svg";
 import Container from "../../components/container";
 import Flex from "../../components/flex";
+// import { useMembers } from "../../services/use-members";
+// import Spinner from "../../components/spinner";
+// import { useMain } from "../../services/use-main";
 
 const HomeIntro = () => {
   return (
@@ -13,9 +16,8 @@ const HomeIntro = () => {
           <div className="intro-section__wrapper__details">
             <h1>MILLIARD BUSINESS CLUB</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet
-              corporis culpa delectus deserunt eaque excepturi fuga fugiat,
-              harum ipsfsadf
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio
+              in et, lectus sit lorem id integer.
             </p>
             <Flex className={"footer"} alignItems={"center"}>
               <img

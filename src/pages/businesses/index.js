@@ -6,7 +6,7 @@ import BusinessCard from "../../components/business-card";
 import swap from "../../images/swap.svg";
 import "./styles.scss";
 import Contact from "../../sections/contact";
-import { BUSINESSES } from "../../constants/businesses";
+import { BUSINESSES } from "../../constants";
 
 const BusinessesPage = () => {
   return (

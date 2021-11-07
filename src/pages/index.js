@@ -12,30 +12,35 @@ import { Link } from "gatsby";
 import Footer from "../components/footer";
 import Contact from "../sections/contact";
 import ClubMembers from "../sections/club-members";
+import useHomePageData from "../services/use-home-page-data";
+import PageSpinner from "../components/page-spinner";
 
 const HomePage = () => {
+  const { loading, data } = useHomePageData();
   return (
-    <MainLayout>
-      <Header>
-        <Container>
-          <Flex justifyContent={"space-between"} alignItems={"center"}>
-            <Link to="/">
-              <div>
-                <img className={"logo"} src={logo} alt="" />
-              </div>
-            </Link>
-            <Link to={"/contact"}>
-              <Button variant={"outlined"}>Contact</Button>
-            </Link>
-          </Flex>
-        </Container>
-      </Header>
-      <HomeIntro />
+    <PageSpinner loading={loading}>
+      <MainLayout>
+        <Header>
+          <Container>
+            <Flex justifyContent={"space-between"} alignItems={"center"}>
+              <Link to="/">
+                <div>
+                  <img className={"logo"} src={logo} alt="" />
+                </div>
+              </Link>
+              <Link to={"/contact"}>
+                <Button variant={"outlined"}>Contact</Button>
+              </Link>
+            </Flex>
+          </Container>
+        </Header>
+        <HomeIntro />
 
-      <BusinessTypes />
-      <ClubMembers />
-      <Contact />
-    </MainLayout>
+        <BusinessTypes />
+        <ClubMembers />
+        <Contact />
+      </MainLayout>
+    </PageSpinner>
   );
 };
 
