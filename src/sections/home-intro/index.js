@@ -4,11 +4,15 @@ import logo from "../../images/banner_logo.png";
 import play from "../../images/play.svg";
 import Container from "../../components/container";
 import Flex from "../../components/flex";
+import ContactMemberForm from "../../components/contact-member-form";
+import Modal from "../../components/modal";
+import { useModal } from "../../hooks";
 // import { useMembers } from "../../services/use-members";
 // import Spinner from "../../components/spinner";
 // import { useMain } from "../../services/use-main";
 
 const HomeIntro = () => {
+  const { open, onClose, onOpen } = useModal();
   return (
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
       <Container className={"flex-center"}>
@@ -29,7 +33,7 @@ const HomeIntro = () => {
               <p>DISCOVER</p>
             </Flex>
           </div>
-          <div>
+          <div onClick={() => onOpen()}>
             <img className={"logo"} src={logo} alt="logo-milliard" />
           </div>
         </div>

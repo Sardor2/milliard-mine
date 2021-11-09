@@ -1,6 +1,17 @@
 @import "src/styles/variables";
 .contact-section {
   //background-color: $color-dark;
+
+  h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 2rem;
+    margin-bottom: 2.6rem;
+    font-weight: 500;
+  }
   .contact-box {
     position: relative;
     max-width: 95rem;
@@ -24,16 +35,7 @@
       background: $linear-gold;
     }
 
-    h2 {
-      font-size: 2.4rem;
-      text-align: center;
-      font-weight: 700;
-    }
-    h4 {
-      font-size: 2rem;
-      margin-bottom: 2.6rem;
-      font-weight: 500;
-    }
+
     .address-box {
         font-weight: 400;
         font-size: 1.6rem;
@@ -48,7 +50,6 @@
 
     .socials {
       display: flex;
-
       .social-icon {
         height: 1.6rem;
 
@@ -65,6 +66,41 @@
         max-width: 100%;
       }
       margin-top: 3rem;
+    }
+  }
+
+
+  @media (max-width: 576px) {
+
+    h2 {
+      text-align: left;
+
+    }
+
+    .contact-box {
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+
+
+      form input,textarea {
+        background-color: $color-black;
+
+        &:focus ~ label {
+          background-color: $color-black;
+        }
+      }
+
+      &:before {
+        display: none;
+      }
+
+      .inputs-wrapper {
+        h4 {
+          font-size: 1.2rem;
+        }
+        width: 100%;
+      }
     }
   }
 }

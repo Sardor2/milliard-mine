@@ -16,6 +16,10 @@ import clubMember from "../../images/club-members/club-member-1.png";
 // import bottomMember from "../../images/club-members/club-member-bottom-1.png";
 import circlesSvg from "../../images/circles.svg";
 import arrow from "../../images/arrow-right.svg";
+import ContactMemberForm from "../../components/contact-member-form";
+import Modal from "../../components/modal";
+import { useModal } from "../../hooks";
+import ClubMember from "./club-member";
 
 const singleMember = {
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
@@ -35,6 +39,7 @@ SwiperCore.use([Navigation, Thumbs]);
 
 const ClubMembers = ({ members }) => {
   const [currentMember, setCurrentMember] = React.useState(null);
+  const { onClose, open, onOpen } = useModal();
 
   return (
     <section id="club-members" className="club-members">
@@ -49,7 +54,9 @@ const ClubMembers = ({ members }) => {
         </div>
       </div>
       <Container maxWidth={"md"}>
-        <h2 className="text-left">Klub a'zolari</h2>
+        <h2 onClick={onOpen} className="text-left">
+          Klub a'zolari
+        </h2>
         <Swiper
           navigation={true}
           thumbs={{ swiper: currentMember }}
@@ -58,38 +65,7 @@ const ClubMembers = ({ members }) => {
         >
           {MEMBERS.map((member) => (
             <SwiperSlide key={member.name}>
-              <div className="current-member">
-                <div className="current-member-img">
-                  <img src={member.img} alt="club-member" />
-                </div>
-
-                <div className="current-member-details">
-                  <h3>{member.name}</h3>
-                  <p>{member.description}</p>
-
-                  <div className="contacts-wrapper mt-9">
-                    <Button variant="filled">Contact</Button>
-                    <a href="#" className="website-link    font-poppins">
-                      Go to the website
-                    </a>
-
-                    <div className="social-links flex mt-10">
-                      <a className="mr-7" href="#facebook">
-                        <img src={facebook} alt="facebook" />
-                      </a>
-                      <a className="mr-7" href="#instagram">
-                        <img src={instagram} alt="instagram" />
-                      </a>
-                      <a className="mr-7" href="#twitter">
-                        <img src={twitter} alt="twitter" />
-                      </a>
-                      <a className="mr-7" href="#youtube">
-                        <img src={youtube} alt="yotube" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <ClubMember {...member} />
             </SwiperSlide>
           ))}
         </Swiper>

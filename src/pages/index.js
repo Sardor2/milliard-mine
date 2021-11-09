@@ -19,7 +19,6 @@ import Partners from "../sections/partners";
 
 const HomePage = () => {
   const { loading, data } = useHomePageData();
-  console.log(data);
   return (
     <PageSpinner loading={loading}>
       <MainLayout>
