@@ -20,3 +20,12 @@ export const useAsync = (fn) => {
 
   return { loading, error, data };
 };
+
+export const useModal = () => {
+  const [open, setOpen] = useState(false);
+  return {
+    open,
+    onClose: () => setOpen(false),
+    onOpen: () => setOpen(true),
+  };
+};

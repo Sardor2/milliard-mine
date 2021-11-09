@@ -1,0 +1,75 @@
+@import 'src/styles/variables';
+
+.contact-member-form-container {
+    background-color: $color-black;
+    font-family: Poppins,sans-serif;
+    padding: 10rem 9rem 5rem;
+  position: relative;
+    h2 {
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+    }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.8rem;
+
+    button {
+      border-radius: 0;
+    }
+
+    input {
+      background-color: $color-black;
+    }
+
+    .form-item {
+      margin: 1.2rem 0;
+    }
+
+    button {
+      max-width: 24rem;
+      min-width: 24rem;
+      margin: 6rem auto 0;
+    }
+  }
+
+  .footer {
+    margin-top: 9rem;
+    display: flex;
+    color: $color-white;
+    justify-content: center;
+    span {
+      color: $color-text-secondary;
+      font-weight: 700;
+    }
+  }
+
+  .cross-icon {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    transition: all .3s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+
+    &:active {
+      transform: rotate(90deg) scale(.9);
+    }
+  }
+
+  @media (max-width: 576px) {
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .footer {
+      font-size: 1.2rem;
+    }
+
+    padding: 10rem 4rem 5rem;
+  }
+}

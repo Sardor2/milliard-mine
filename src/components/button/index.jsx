@@ -7,9 +7,11 @@ const Button = ({
   variant = "outlined",
   loading = false,
   className = "",
+  onClick = () => null,
 }) => (
   <button
     className={`btn btn-${variant} ${loading ? "loading" : ""} ${className}`}
+    onClick={onClick}
   >
     {children}
     {loading && <img src={spinnerSvg} className="loader-img" alt="spinner" />}

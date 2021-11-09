@@ -48,7 +48,7 @@ const Contact = () => {
           onSubmit={handleSubmit}
           className="flex justify-between flex-wrap mt-20"
         >
-          <div className="flex flex-col lg:w-7/12 lg:max-w-2xl">
+          <div className="flex flex-col inputs-wrapper  lg:w-7/12 lg:max-w-2xl">
             <h4>Xabaringizni quyida qoldiring!</h4>
             <div className="mb-9">
               <Input
