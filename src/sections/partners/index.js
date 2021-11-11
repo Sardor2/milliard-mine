@@ -11,7 +11,7 @@ import { PARTNERS } from "../../constants";
 SwiperCore.use([Navigation]);
 
 const Partners = ({ partners }) => {
-  // console.log(partners)
+  console.log(partners, "partners");
   return (
     <section id="partners" className="partners">
       <Container>
@@ -40,13 +40,15 @@ const Partners = ({ partners }) => {
             },
           }}
         >
-          {PARTNERS.map((item, index) => (
+          {partners.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="box flex-center">
-                <div className="image">
-                  <img src={item.img} alt={item.title} />
+              <a style={{ display: "block" }} href={item.url} target="_blank">
+                <div className="box flex-center">
+                  <div className="image">
+                    <img src={item.logo_url} alt={item.name} />
+                  </div>
                 </div>
-              </div>
+              </a>
             </SwiperSlide>
           ))}
         </Swiper>

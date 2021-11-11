@@ -36,10 +36,10 @@ const HomePage = () => {
             </Flex>
           </Container>
         </Header>
-        <HomeIntro />
-        <About />
-        <BusinessTypes />
-        <ClubMembers />
+        <HomeIntro {...data?.main} />
+        <About {...data?.about} />
+        <BusinessTypes businessTypes={data?.businessTypes} />
+        <ClubMembers members={data?.members} />
         <Projects projects={data?.images} />
         <Partners partners={data?.partners} />
         <Contact />
