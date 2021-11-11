@@ -41,6 +41,8 @@ const ClubMembers = ({ members }) => {
   const [currentMember, setCurrentMember] = React.useState(null);
   const { onClose, open, onOpen } = useModal();
 
+  console.log(members, "members");
+
   return (
     <section id="club-members" className="club-members">
       <div className="animText">
@@ -63,9 +65,16 @@ const ClubMembers = ({ members }) => {
           className="mySwiper2"
           speed={700}
         >
-          {MEMBERS.map((member) => (
+          {members.map((member) => (
             <SwiperSlide key={member.name}>
-              <ClubMember {...member} />
+              <ClubMember
+                name={member.title}
+                img={member.logo_url}
+                description={member.description}
+                website={member.website}
+                socials={member.socials}
+                {...member}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -87,13 +96,13 @@ const ClubMembers = ({ members }) => {
               },
             }}
           >
-            {MEMBERS.map((member, index) => (
-              <SwiperSlide key={member.name}>
+            {members.map((member) => (
+              <SwiperSlide key={member.title}>
                 <div className={"each-member"}>
                   <img
                     className="filter grayscale"
-                    src={member.img}
-                    alt="member"
+                    src={member.logo_url}
+                    alt={member.title}
                   />
                 </div>
               </SwiperSlide>

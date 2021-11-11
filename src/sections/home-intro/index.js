@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import logo from "../../images/banner_logo.png";
+// import logo from "../../images/banner_logo.png";
 import play from "../../images/play.svg";
 import Container from "../../components/container";
 import Flex from "../../components/flex";
@@ -11,18 +11,21 @@ import { useModal } from "../../hooks";
 // import Spinner from "../../components/spinner";
 // import { useMain } from "../../services/use-main";
 
-const HomeIntro = () => {
+const HomeIntro = ({
+  description = "",
+  iframe = "",
+  logo = "",
+  logo_url = "",
+  title = "",
+}) => {
   const { open, onClose, onOpen } = useModal();
   return (
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
       <Container className={"flex-center"}>
         <div className={"intro-section__wrapper"}>
           <div className="intro-section__wrapper__details">
-            <h1>MILLIARD BUSINESS CLUB</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio
-              in et, lectus sit lorem id integer.
-            </p>
+            <h1>{title.substring(0, 20)}</h1>
+            <p>{description}</p>
             <Flex className={"footer"} alignItems={"center"}>
               <img
                 src={play}
@@ -34,7 +37,7 @@ const HomeIntro = () => {
             </Flex>
           </div>
           <div onClick={() => onOpen()}>
-            <img className={"logo"} src={logo} alt="logo-milliard" />
+            <img className={"logo"} src={logo_url} alt="logo-milliard" />
           </div>
         </div>
       </Container>

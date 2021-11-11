@@ -15,7 +15,8 @@ import "swiper/scss/pagination";
 
 SwiperCore.use([Navigation, Pagination]);
 
-const BusinessTypes = () => {
+const BusinessTypes = ({ businessTypes }) => {
+  console.log(businessTypes, "hello");
   return (
     <section className={"business-types"} id={"business-types"}>
       <h2>Business turlari</h2>
@@ -40,13 +41,11 @@ const BusinessTypes = () => {
           },
         }}
       >
-        {Array(10)
-          .fill(1)
-          .map((item, i) => (
-            <SwiperSlide>
-              <BusinessCard key={i} img={swap} name={"Savdo sotiq"} />
-            </SwiperSlide>
-          ))}
+        {businessTypes.map((item, i) => (
+          <SwiperSlide key={item.id}>
+            <BusinessCard img={item.logo_url} name={item.title} />
+          </SwiperSlide>
+        ))}
         <div className="left-blur"></div>
         <div className="right-blur"></div>
       </Swiper>
