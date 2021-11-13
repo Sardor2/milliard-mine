@@ -8,6 +8,7 @@ import Youtube from "../../images/icons/Youtube.svg";
 import Modal from "../../components/modal";
 import ContactMemberForm from "../../components/contact-member-form";
 import { useModal } from "../../hooks";
+import { useTranslation } from "react-i18next";
 
 const socialsIcons = {
   Facebook,
@@ -18,6 +19,7 @@ const socialsIcons = {
 
 const ClubMember = ({ img, name, description, website, socials }) => {
   const modal = useModal();
+  const { t } = useTranslation();
   return (
     <>
       <Modal {...modal}>
@@ -34,14 +36,14 @@ const ClubMember = ({ img, name, description, website, socials }) => {
 
           <div className="contacts-wrapper mt-9">
             <Button onClick={modal.onOpen} variant="filled">
-              Contact
+              {t("contact")}
             </Button>
             <a
               href={website}
               target="_blank"
               className="website-link    font-poppins"
             >
-              Go to the website
+              {t("go_to_website")}
             </a>
 
             <div className="social-links flex mt-10">

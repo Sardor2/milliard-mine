@@ -9,6 +9,7 @@ import instagram from "../../images/icons/Instagram.svg";
 import facebook from "../../images/icons/Facebook.svg";
 import twitter from "../../images/icons/Twitter.svg";
 import useSubmitFeedback from "../../services/use-submit-feedback";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const { loading, mutate } = useSubmitFeedback({
@@ -16,6 +17,8 @@ const Contact = () => {
       setFormValues({ email: "", fullName: "", message: "" });
     },
   });
+
+  const { t } = useTranslation();
 
   const [formValues, setFormValues] = useState({
     email: "",
@@ -43,19 +46,19 @@ const Contact = () => {
   return (
     <section className="p-10 lg:p-20 pt-24 contact-section  " id={"contact"}>
       <div className="contact-box">
-        <h2>Investitsiya kiritish yoki investor bo’lish!</h2>
+        <h2>{t("invest_or_be_investor")}</h2>
         <form
           onSubmit={handleSubmit}
           className="flex justify-between flex-wrap mt-20"
         >
           <div className="flex flex-col inputs-wrapper  lg:w-7/12 lg:max-w-2xl">
-            <h4>Xabaringizni quyida qoldiring!</h4>
+            <h4>{t("leave_message")}</h4>
             <div className="mb-9">
               <Input
                 onChange={handleChange}
                 value={formValues.fullName}
                 name="fullName"
-                label="Name"
+                label={t("name")}
                 type="text"
                 required
               />
@@ -65,7 +68,7 @@ const Contact = () => {
                 onChange={handleChange}
                 value={formValues.email}
                 name="email"
-                label="Email"
+                label={t("email")}
                 type="email"
                 required
               />
@@ -75,12 +78,12 @@ const Contact = () => {
                 onChange={handleChange}
                 value={formValues.message}
                 name={"message"}
-                label={"Your message"}
+                label={t("your_message")}
                 required
               />
             </div>
             <Button loading={loading} variant="filled">
-              Send
+              {t("send")}
             </Button>
           </div>
           <div className="flex flex-col pt-16 lg:w-5/12  lg:ml-10">

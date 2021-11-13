@@ -16,9 +16,11 @@ import PageSpinner from "../components/page-spinner";
 import About from "../sections/about";
 import Projects from "../sections/projects";
 import Partners from "../sections/partners";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
   const { loading, data } = useHomePageData();
+  const { t } = useTranslation();
   return (
     <PageSpinner loading={loading}>
       <MainLayout>
@@ -31,7 +33,7 @@ const HomePage = () => {
                 </div>
               </Link>
               <Link to={"/contact"}>
-                <Button variant={"outlined"}>Contact</Button>
+                <Button variant={"outlined"}>{t("contact")}</Button>
               </Link>
             </Flex>
           </Container>
