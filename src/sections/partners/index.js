@@ -7,15 +7,17 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 
 import "swiper/scss/navigation";
 import { PARTNERS } from "../../constants";
+import { useTranslation } from "react-i18next";
 
 SwiperCore.use([Navigation]);
 
 const Partners = ({ partners }) => {
   console.log(partners, "partners");
+  const { t } = useTranslation();
   return (
     <section id="partners" className="partners">
       <Container>
-        <h2 className="text-center">Partners</h2>
+        <h2 className="text-center">{t("partners")}</h2>
         <h3>We have been working with some Fortune 500 clients</h3>
 
         {/*<div className="cards mt-20 flex justify-center"></div>*/}

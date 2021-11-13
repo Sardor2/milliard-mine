@@ -7,8 +7,10 @@ import swap from "../../images/swap.svg";
 import "./styles.scss";
 import Contact from "../../sections/contact";
 import { BUSINESSES } from "../../constants";
+import { useTranslation } from "react-i18next";
 
 const BusinessesPage = () => {
+  const { t } = useTranslation();
   return (
     <MainLayout>
       <Header>
@@ -16,7 +18,9 @@ const BusinessesPage = () => {
           <img className="w-40" src={logo} alt="" />
         </div>
         <section id="businesses" className="sm:p-10 md:p-20 lg:p-40">
-          <h2 className="text-center capitalize mt-20 lg:mt-2">Biznesslar</h2>
+          <h2 className="text-center capitalize mt-20 lg:mt-2">
+            {t("businesses")}
+          </h2>
           <div className="business-cards justify-between flex mt-20 flex-wrap m-auto">
             {BUSINESSES.map((item) => (
               <BusinessCard

@@ -12,14 +12,16 @@ import "./styles.scss";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 
 import "swiper/scss/pagination";
+import { useTranslation } from "react-i18next";
 
 SwiperCore.use([Navigation, Pagination]);
 
 const BusinessTypes = ({ businessTypes }) => {
   console.log(businessTypes, "hello");
+  const { t } = useTranslation();
   return (
     <section className={"business-types"} id={"business-types"}>
-      <h2>Business turlari</h2>
+      <h2>{t("business_types")}</h2>
       <Swiper
         navigation={true}
         pagination={{
