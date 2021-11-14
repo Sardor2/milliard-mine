@@ -9,7 +9,7 @@ const fetchAll = async () => {
   // let images = api("images").then((res) => res.data);
   // let businessTypes = api("types").then((res) => res.data);
 
-  const [main, about, members, partners, images, businessTypes] =
+  const [main, about, members, partners, images, businessTypes, tags] =
     await Promise.all([
       api("main").then((res) => res.data),
       api("about").then((res) => res.data),
@@ -17,6 +17,7 @@ const fetchAll = async () => {
       api("partners").then((res) => res.data),
       api("images").then((res) => res.data),
       api("types").then((res) => res.data),
+      api("tags").then((res) => res.data),
     ]);
 
   return {
@@ -26,6 +27,7 @@ const fetchAll = async () => {
     partners,
     images,
     businessTypes,
+    tags,
   };
 };
 
