@@ -20,6 +20,7 @@ import ContactMemberForm from "../../components/contact-member-form";
 import Modal from "../../components/modal";
 import { useModal } from "../../hooks";
 import ClubMember from "./club-member";
+import AnimText from "../../components/animText";
 
 const singleMember = {
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
@@ -45,16 +46,10 @@ const ClubMembers = ({ members }) => {
 
   return (
     <section id="club-members" className="club-members">
-      <div className="animText">
-        <div className="animTextLine">
-          CLub members - community - Give million - get billion - give million -
-          get billion
-        </div>
-        <div className="animTextLine">
-          CLub members - community - Give million - get billion - give million -
-          get billion
-        </div>
-      </div>
+      <AnimText
+        title="CLub members - community - Give million - get billion - give million -
+          get billion"
+      />
       <Container maxWidth={"md"}>
         <h2 onClick={onOpen} className="text-left">
           Klub a'zolari
