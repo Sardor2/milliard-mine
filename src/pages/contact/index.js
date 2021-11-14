@@ -8,8 +8,10 @@ import { Link } from "gatsby";
 import Flex from "../../components/flex";
 import "./styles.scss";
 import Contact from "../../sections/contact";
+import { useTranslation } from "react-i18next";
 
 const ContactPage = () => {
+  const { t } = useTranslation();
   return (
     <MainLayout>
       <Header>
@@ -19,7 +21,7 @@ const ContactPage = () => {
               <img className="logo" src={logo} alt="" />
             </Link>
             <Link to="/">
-              <Button variant={"outlined"}>Home</Button>
+              <Button variant={"outlined"}>{t("home")}</Button>
             </Link>
           </Flex>
         </Container>

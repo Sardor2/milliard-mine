@@ -13,6 +13,7 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 
 import "swiper/scss/pagination";
 import { useTranslation } from "react-i18next";
+import { Link } from "gatsby";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -45,7 +46,9 @@ const BusinessTypes = ({ businessTypes }) => {
       >
         {businessTypes.map((item, i) => (
           <SwiperSlide key={item.id}>
-            <BusinessCard img={item.logo_url} name={item.title} />
+            <Link to={`/businesses/${item?.slug}`}>
+              <BusinessCard img={item.logo_url} name={item.title} />
+            </Link>
           </SwiperSlide>
         ))}
         <div className="left-blur"></div>
