@@ -36,6 +36,10 @@
     }
     p {
       font-size: 1.8rem;
+
+      @media (max-width: 576px) {
+        font-size: 1.2rem;
+      }
     }
   }
   .counter {

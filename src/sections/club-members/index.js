@@ -21,6 +21,7 @@ import Modal from "../../components/modal";
 import { useModal } from "../../hooks";
 import ClubMember from "./club-member";
 import AnimText from "../../components/animText";
+import { useTranslation } from "react-i18next";
 
 const singleMember = {
   description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
@@ -43,6 +44,7 @@ const ClubMembers = ({ members }) => {
   const { onClose, open, onOpen } = useModal();
 
   console.log(members, "members");
+  const { t } = useTranslation();
 
   return (
     <section id="club-members" className="club-members">
@@ -52,7 +54,7 @@ const ClubMembers = ({ members }) => {
       />
       <Container maxWidth={"md"}>
         <h2 onClick={onOpen} className="text-left">
-          Klub a'zolari
+          {t("club_members")}
         </h2>
         <Swiper
           navigation={true}
