@@ -30,7 +30,7 @@ const About = ({ images_url = [], description, info = [], title }) => {
             </div>
           </div>
           <div className="aboutTeaser">
-            <h3 className="aboutTeaser-title">{title}</h3>
+            <h2 className="aboutTeaser-title">{title}</h2>
             <p>{description}</p>
             <div className="counter flex flex-wrap">
               {info.map((item) => (

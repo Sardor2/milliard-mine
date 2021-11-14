@@ -17,6 +17,7 @@ import About from "../sections/about";
 import Projects from "../sections/projects";
 import Partners from "../sections/partners";
 import { useTranslation } from "react-i18next";
+import Statistics from "../sections/statistics";
 
 const HomePage = () => {
   const { loading, data } = useHomePageData();
@@ -44,6 +45,7 @@ const HomePage = () => {
         <ClubMembers members={data?.members} />
         <Projects projects={data?.images} />
         <Partners partners={data?.partners} />
+        <Statistics tags={data?.tags} />
         <Contact />
       </MainLayout>
     </PageSpinner>
