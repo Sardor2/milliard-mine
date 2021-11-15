@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.scss";
 import Container from "../../components/container";
 import { Doughnut, Line } from "react-chartjs-2";
-import { randomColor } from "randomcolor";
 import { lineOptions, linedata } from "./line-chart-data";
 
 const options = {
@@ -24,16 +23,6 @@ const Statistics = ({ tags }) => {
       }, 0),
     [tags]
   );
-  console.log(total);
-
-  const COLORS = React.useMemo(
-    () =>
-      randomColor({
-        count: tags.length,
-        luminosity: "light",
-      }),
-    [tags]
-  );
 
   const data = {
     labels: tags.map((item) => item.tag),
@@ -41,7 +30,7 @@ const Statistics = ({ tags }) => {
       {
         label: false,
         data: tags.map((item) => item.count),
-        backgroundColor: COLORS,
+        backgroundColor: tags.map((item) => item.color),
         // borderColor: [
         //   "rgba(255, 99, 132, 1)",
         //   "rgba(54, 162, 235, 1)",
@@ -79,7 +68,7 @@ const Statistics = ({ tags }) => {
           <div className="pie-container">
             <Doughnut type="doughnut" data={data} options={options} />
             <span className="center-text">
-              {(tags[currentTag].count / total).toFixed(2) * 100}%
+              {((tags[currentTag].count * 100) / total).toFixed(1)}%
             </span>
             <div className="legends">
               {tags.map((item, index) => (
@@ -87,7 +76,7 @@ const Statistics = ({ tags }) => {
                   <h5>{item.tag}</h5>
                   <span>{item.count}</span>
                   <div
-                    style={{ backgroundColor: COLORS[index] }}
+                    style={{ backgroundColor: item.color }}
                     className="dot"
                   ></div>
                 </div>

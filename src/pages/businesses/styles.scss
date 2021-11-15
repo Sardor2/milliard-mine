@@ -2,8 +2,21 @@
   width: 80%;
   max-width: 1000px;
 
+  a > div {
+    min-width: 17rem;
+    min-height: 17rem;
+  }
+
   .business-item {
     width: 15%;
     display: inline-block;
+  }
+
+
+  @media (max-width: 576px) {
+    a > div {
+      min-width: 13rem;
+      min-height: 13rem;
+    }
   }
 }

@@ -12,6 +12,7 @@ import Spinner from "../../components/spinner";
 import PageSpinner from "../../components/page-spinner";
 import { useBusinesses } from "../../services/use-businesses";
 import { Redirect } from "@reach/router";
+import { Link } from "gatsby";
 
 const BusinessesPage = ({ params }) => {
   const { t } = useTranslation();
@@ -35,14 +36,16 @@ const BusinessesPage = ({ params }) => {
             <h2 className="text-center capitalize mt-20 lg:mt-2">
               {t("businesses")}
             </h2>
-            <div className="business-cards justify-between flex mt-20 flex-wrap m-auto">
+            <div className="business-cards justify-evenly flex mt-20 flex-wrap m-auto">
               {data?.map((item) => (
-                <BusinessCard
-                  className="mb-10"
-                  key={item.id}
-                  img={item.logo_url}
-                  name={item.name}
-                />
+                <Link to={"/itspec"}>
+                  <BusinessCard
+                    className="mb-10"
+                    key={item.id}
+                    img={item.logo_url}
+                    name={item.name}
+                  />
+                </Link>
               ))}
             </div>
           </section>
