@@ -9,6 +9,7 @@ import Container from "../container";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import Select from "../select";
+import { usePages } from "../../services/use-pages";
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
@@ -19,6 +20,10 @@ const Footer = () => {
       window.location.reload();
     }
   };
+
+  const { data, loading } = usePages();
+
+  console.log(data, "pages");
   return (
     <footer>
       <Container maxWidth={"lg"}>

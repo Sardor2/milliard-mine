@@ -31,9 +31,18 @@ const HomeIntro = ({
                 src={play}
                 alt="play"
                 className="intro-section__wrapper__details__play-icon"
+                onClick={onOpen}
               />
               <span className="intro-section__wrapper__details__line" />
               <p>DISCOVER</p>
+              <Modal open={open} onClose={onClose}>
+                <iframe
+                  width="700"
+                  style={{ maxWidth: "100vw", maxHeight: "100vh" }}
+                  height="400"
+                  src={iframe}
+                />
+              </Modal>
             </Flex>
           </div>
           <div onClick={() => onOpen()}>

@@ -68,7 +68,7 @@ const Statistics = ({ tags }) => {
           <div className="pie-container">
             <Doughnut type="doughnut" data={data} options={options} />
             <span className="center-text">
-              {((tags[currentTag].count * 100) / total).toFixed(1)}%
+              {((tags[currentTag]?.count * 100) / total).toFixed(1)}%
             </span>
             <div className="legends">
               {tags.map((item, index) => (
