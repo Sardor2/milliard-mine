@@ -24,7 +24,7 @@ export const linedata = {
   datasets: [
     {
       label: "# of Projects",
-      data: [0, 10, 5, 7, 13, 9],
+      data: [0, 3, 2, 3, 1.5, 0.6],
       fill: false,
       backgroundColor: "#544179",
       tension: 0.3,
