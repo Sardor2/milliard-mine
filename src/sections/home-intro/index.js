@@ -24,7 +24,7 @@ const HomeIntro = ({
       <Container className={"flex-center"}>
         <div className={"intro-section__wrapper"}>
           <div className="intro-section__wrapper__details">
-            <h1>{title.substring(0, 20)}</h1>
+            <h1>{title}</h1>
             <p>{description}</p>
             <Flex className={"footer"} alignItems={"center"}>
               <img
