@@ -62,7 +62,7 @@ const ClubMembers = ({ members }) => {
           className="mySwiper2"
           speed={700}
         >
-          {members.map((member) => (
+          {members?.map((member) => (
             <SwiperSlide key={member.name}>
               <ClubMember
                 name={member.title}
