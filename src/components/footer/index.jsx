@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <footer>
       <Container maxWidth={"lg"}>
-        <div className="flex justify-between my-20">
-          <Link to="/">
+        <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between my-20">
+          <Link to="/" className="block md:inline-block mb-20 md:mb-0">
             <img className={"logo"} src={logo} alt="" />
           </Link>
           <div className="flex max-w-3xl">
@@ -31,9 +31,6 @@ const Footer = () => {
                 <Link to="" className="mb-2">
                   {t("club_members")}
                 </Link>
-                {/*<Link to="" className="mb-2">*/}
-                {/*  Charity*/}
-                {/*</Link>*/}
               </div>
             </div>
             <div className="social">
