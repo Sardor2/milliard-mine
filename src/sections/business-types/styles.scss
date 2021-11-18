@@ -73,6 +73,7 @@ section.business-types {
     }
     .business-swiper {
       padding-bottom: 6rem;
+
     }
   }
 
@@ -80,6 +81,19 @@ section.business-types {
     h2 {
       font-size: 2.4rem;
       margin-bottom: 3rem;
+    }
+
+    .swiper-slide {
+      margin-right: 0;
+    }
+
+    .business-swiper {
+      padding-bottom: 6rem;
+    }
+
+    .left-blur,.right-blur {
+      width: 10rem;
+
     }
   }
 }
