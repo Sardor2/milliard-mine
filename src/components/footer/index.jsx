@@ -14,7 +14,7 @@ const Footer = () => {
   const { t, i18n } = useTranslation();
   const handleLang = (e) => {
     i18n.changeLanguage(e.target.value);
-    localStorage.setItem("lang", e.target.value);
+
     if (typeof window !== `undefined`) {
       window.location.reload();
     }
