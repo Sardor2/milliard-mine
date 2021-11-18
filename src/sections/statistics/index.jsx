@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles.scss";
 import Container from "../../components/container";
-import { Doughnut } from "react-chartjs-2";
+import { Doughnut, Line } from "react-chartjs-2";
 import { randomColor } from "randomcolor";
+import { lineOptions, linedata } from "./line-chart-data";
 
 const options = {
   plugins: {
@@ -94,9 +95,11 @@ const Statistics = ({ tags }) => {
             </div>
           </div>
         </div>
-
-        <div className="bottom-line-graph"></div>
       </Container>
+
+      <div className="bottom-line-graph">
+        <Line data={linedata} options={lineOptions} />
+      </div>
     </section>
   );
 };

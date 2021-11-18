@@ -8,9 +8,17 @@ import youtube from "../../images/icons/Youtube.svg";
 import Container from "../container";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
+import Select from "../select";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const handleLang = (e) => {
+    i18n.changeLanguage(e.target.value);
+    localStorage.setItem("lang", e.target.value);
+    if (typeof window !== `undefined`) {
+      window.location.reload();
+    }
+  };
   return (
     <footer>
       <Container maxWidth={"lg"}>
@@ -18,6 +26,7 @@ const Footer = () => {
           <Link to="/" className="block md:inline-block mb-20 md:mb-0">
             <img className={"logo"} src={logo} alt="" />
           </Link>
+
           <div className="flex max-w-3xl">
             <div className="mx-10 md:mx-20 lg:mx-40">
               <div className="font-bold text-4xl mb-5">{t("support")}</div>
@@ -33,6 +42,7 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
+
             <div className="social">
               <div className="font-bold text-4xl mb-5">{t("social")}</div>
               <div className="social-links flex">
@@ -48,6 +58,17 @@ const Footer = () => {
                 <a className="mr-7" href="#youtube">
                   <img src={youtube} alt="yotube" />
                 </a>
+              </div>
+              <div className="mt-6">
+                <Select
+                  value={i18n.language}
+                  onChange={handleLang}
+                  className="lang"
+                >
+                  <option value="uz">Uz</option>
+                  <option value="ru">Ru</option>
+                  <option value="en">En</option>
+                </Select>
               </div>
             </div>
           </div>
