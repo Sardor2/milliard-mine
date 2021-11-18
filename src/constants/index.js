@@ -192,4 +192,4 @@ export const PARTNERS = [
   },
 ];
 
-export const BASE_URL = "https://b37e-195-158-9-82.ngrok.io/api/site/";
+export const BASE_URL = "https://api.milliard.uz/api/site/";
