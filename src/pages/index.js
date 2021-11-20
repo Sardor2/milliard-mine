@@ -21,13 +21,14 @@ import Statistics from "../sections/statistics";
 import Modal from "../components/modal";
 import LanguageBanner from "../components/language-banner";
 import { useModal } from "../hooks";
+import { getLang } from "../utils";
 
 const HomePage = () => {
   const { loading, data } = useHomePageData();
   const { t } = useTranslation();
 
   const shouldRenderLanguageBanner = React.useMemo(
-    () => (localStorage.getItem("lang") ? false : true),
+    () => (getLang() ? false : true),
     []
   );
 

@@ -62,18 +62,19 @@ const ClubMembers = ({ members }) => {
           className="mySwiper2"
           speed={700}
         >
-          {members?.map((member) => (
-            <SwiperSlide key={member.name}>
-              <ClubMember
-                name={member.title}
-                img={member.logo_url}
-                description={member.description}
-                website={member.website}
-                socials={member.socials}
-                {...member}
-              />
-            </SwiperSlide>
-          ))}
+          {members &&
+            members?.map((member) => (
+              <SwiperSlide key={member.name}>
+                <ClubMember
+                  name={member.title}
+                  img={member.logo_url}
+                  description={member.description}
+                  website={member.website}
+                  socials={member.socials}
+                  {...member}
+                />
+              </SwiperSlide>
+            ))}
         </Swiper>
 
         <div className="members">
@@ -93,7 +94,7 @@ const ClubMembers = ({ members }) => {
               },
             }}
           >
-            {members.map((member) => (
+            {members?.map((member) => (
               <SwiperSlide key={member.title}>
                 <div className={"each-member"}>
                   <img

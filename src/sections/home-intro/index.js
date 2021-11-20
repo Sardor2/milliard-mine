@@ -45,7 +45,7 @@ const HomeIntro = ({
               </Modal>
             </Flex>
           </div>
-          <div onClick={() => onOpen()}>
+          <div>
             <img className={"logo"} src={logo_url} alt="logo-milliard" />
           </div>
         </div>
