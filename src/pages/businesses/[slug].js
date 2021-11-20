@@ -22,9 +22,6 @@ const BusinessesPage = ({ params }) => {
     return <h1>{JSON.stringify(error)}</h1>;
   }
 
-  console.log(data);
-
-  // console.log(params.slug);
   return (
     <PageSpinner loading={loading}>
       <MainLayout>
@@ -38,7 +35,7 @@ const BusinessesPage = ({ params }) => {
             </h2>
             <div className="business-cards justify-evenly flex mt-20 flex-wrap m-auto">
               {data?.map((item) => (
-                <Link to={"/itspec"}>
+                <Link to={`/itspec/${item.slug}`}>
                   <BusinessCard
                     className="mb-10"
                     key={item.id}

@@ -21,8 +21,8 @@ export const useAsync = (fn) => {
   return { loading, error, data };
 };
 
-export const useModal = () => {
-  const [open, setOpen] = useState(false);
+export const useModal = (initialState = false) => {
+  const [open, setOpen] = useState(initialState);
   return {
     open,
     onClose: () => setOpen(false),

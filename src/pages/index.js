@@ -19,20 +19,17 @@ import Partners from "../sections/partners";
 import { useTranslation } from "react-i18next";
 import Statistics from "../sections/statistics";
 import Modal from "../components/modal";
-import AnimText from "../components/animText";
+import LanguageBanner from "../components/language-banner";
+import { useModal } from "../hooks";
 
 const HomePage = () => {
   const { loading, data } = useHomePageData();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const [modalOpen, setModalOpen] = React.useState(false);
-
-  const handleClick = (e) => {
-    i18n.changeLanguage(e.target.id);
-    if (typeof window !== `undefined`) {
-      window.location.reload();
-    }
-  };
+  const shouldRenderLanguageBanner = React.useMemo(
+    () => (localStorage.getItem("lang") ? false : true),
+    []
+  );
 
   return (
     <PageSpinner loading={loading}>
@@ -59,27 +56,8 @@ const HomePage = () => {
         <Partners partners={data?.partners} />
         <Statistics tags={data?.tags} />
         <Contact />
-        <button onClick={() => setModalOpen(true)} className="btn">
-          Click me
-        </button>
-        <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
-          <div className="lang-modal">
-            <AnimText title="CHoose language CHoose language CHoose language CHoose language CHoose language " />
-            <div className="lang-teaser">
-              <h3>Qaysi til sizga ma’qul?</h3>
-              <div className="lang-select">
-                <div onClick={handleClick} id="uz" className="lang-item">
-                  O'zbek
-                </div>
-                <div onClick={handleClick} id="en" className="lang-item">
-                  English
-                </div>
-                <div onClick={handleClick} id="ru" className="lang-item">
-                  Русский
-                </div>
-              </div>
-            </div>
-          </div>
+        <Modal open={shouldRenderLanguageBanner}>
+          <LanguageBanner />
         </Modal>
       </MainLayout>
     </PageSpinner>

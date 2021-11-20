@@ -1,10 +1,10 @@
 import { BASE_URL } from "../constants";
-import i18n from "../i18next";
+import { getLang } from "../utils";
 
 const api = (path, { headers, ...options } = {}) => {
   return fetch(BASE_URL + path, {
     headers: {
-      Language: i18n.language,
+      Language: getLang(),
       "Content-type": "application/json",
       ...headers,
     },
