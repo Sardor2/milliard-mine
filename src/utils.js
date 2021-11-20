@@ -1,8 +1,14 @@
-export const getLang = () => localStorage.getItem("lang") ?? "uz";
+export const getLang = () => {
+  if (localStorage !== undefined) {
+    return localStorage.getItem("lang");
+  }
+  return "uz";
+};
 
 export const setLang = (lang = "uz") => {
-  localStorage.setItem("lang", lang);
-  if (typeof window !== undefined) {
+  if (typeof window !== undefined && typeof localStorage !== undefined) {
+    localStorage.setItem("lang", lang);
+
     window.location.reload();
   }
 };
