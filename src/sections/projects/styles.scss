@@ -20,7 +20,6 @@ section.projects-section {
       .date {
         font-size: 1.8rem;
       }
-
     }
 
     .overlay {
@@ -39,6 +38,7 @@ section.projects-section {
       img {
         height: 100%;
         width: 100%;
+        object-fit: cover;
       }
     }
     @media (min-width: 1200px) {
@@ -49,18 +49,14 @@ section.projects-section {
         }
       }
     }
-
-
-
   }
-
 
   .my-masonry-grid {
     position: relative;
     display: grid;
     max-width: 100%;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    grid-template-rows: minmax(300px,auto);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: minmax(300px, auto);
     grid-auto-flow: dense;
     grid-gap: 30px;
 
@@ -93,9 +89,9 @@ section.projects-section {
       grid-row: span 1;
     }
 
-    @media (max-width: 991px){
-      grid-template-columns: repeat(auto-fill,minmax(50%,1fr));
-      grid-template-rows: minmax(auto,auto);
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+      grid-template-rows: minmax(auto, auto);
 
       .project-card {
         max-width: 730px;
@@ -103,7 +99,6 @@ section.projects-section {
         grid-row: unset !important;
       }
     }
-
   }
 
   @media (max-width: 576px) {
@@ -119,8 +114,8 @@ section.projects-section {
         display: unset;
       }
       .teaser {
-        bottom: .6rem;
-        left: .6rem;
+        bottom: 0.6rem;
+        left: 0.6rem;
         top: unset;
 
         .title {
@@ -145,6 +140,4 @@ section.projects-section {
       grid-gap: 20px;
     }
   }
-
-
 }

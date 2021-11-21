@@ -11,7 +11,7 @@ import Button from "../../components/button";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
-import youtube from "../../images/icons/Youtube.svg";
+import youtube from "../../images/icons/Youtube.png";
 import clubMember from "../../images/club-members/club-member-1.png";
 // import bottomMember from "../../images/club-members/club-member-bottom-1.png";
 import circlesSvg from "../../images/circles.svg";

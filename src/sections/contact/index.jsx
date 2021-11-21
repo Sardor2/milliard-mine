@@ -4,14 +4,15 @@ import "./styles.scss";
 import Button from "../../components/button";
 import TextArea from "../../components/text-area";
 import map from "../../images/map.png";
-import youtube from "../../images/icons/Youtube.svg";
+import youtube from "../../images/icons/Youtube.png";
 import instagram from "../../images/icons/Instagram.svg";
 import facebook from "../../images/icons/Facebook.svg";
 import twitter from "../../images/icons/Twitter.svg";
 import useSubmitFeedback from "../../services/use-submit-feedback";
 import { useTranslation } from "react-i18next";
+import AnimText from "../../components/animText";
 
-const Contact = () => {
+const Contact = ({ renderAnimatedText = false }) => {
   const { loading, mutate } = useSubmitFeedback({
     onSuccess(res) {
       setFormValues({ email: "", fullName: "", message: "" });
@@ -44,14 +45,22 @@ const Contact = () => {
   };
 
   return (
-    <section className="p-10 lg:p-20 pt-24 contact-section  " id={"contact"}>
+    <section
+      className={`p-10 lg:p-20 pt-24 contact-section ${
+        renderAnimatedText ? "with-anim-text" : ""
+      }`}
+      id={"contact"}
+    >
+      {renderAnimatedText && (
+        <AnimText title={"CONTACT CONTACT CONTACT CONTACT CONTACT"} />
+      )}
       <div className="contact-box">
         <h2>{t("invest_or_be_investor")}</h2>
         <form
           onSubmit={handleSubmit}
           className="flex justify-between flex-wrap mt-20"
         >
-          <div className="flex flex-col inputs-wrapper  lg:w-7/12 lg:max-w-2xl">
+          <div className="flex flex-col inputs-wrapper sm:max-w-full sm:w-full  lg:w-7/12 lg:max-w-2xl">
             <h4>{t("leave_message")}</h4>
             <div className="mb-9">
               <Input

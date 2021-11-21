@@ -4,7 +4,7 @@ import Button from "../../components/button";
 import Facebook from "../../images/icons/Facebook.svg";
 import Instagram from "../../images/icons/Instagram.svg";
 import Twitter from "../../images/icons/Twitter.svg";
-import Youtube from "../../images/icons/Youtube.svg";
+import Youtube from "../../images/icons/Youtube.png";
 import Modal from "../../components/modal";
 import ContactMemberForm from "../../components/contact-member-form";
 import { useModal } from "../../hooks";
@@ -47,7 +47,7 @@ const ClubMember = ({ img, name, description, website, socials }) => {
             </a>
 
             <div className="social-links flex mt-10">
-              {socials.map((social) => (
+              {socials?.map((social) => (
                 <a className="mr-7" href={social.value} target="_blank">
                   <img src={socialsIcons[social.name]} alt="facebook" />
                 </a>

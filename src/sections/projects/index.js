@@ -19,7 +19,7 @@ const Projects = ({ projects }) => {
       <Container maxWidth="md">
         <h2>{t("parts_from_meetings")}</h2>
         <div className="my-masonry-grid">
-          {projects.map((project, index) => (
+          {projects?.map((project, index) => (
             <div key={index} className="project-card">
               <div className="teaser">
                 <h3 className="title">{project.title}</h3>

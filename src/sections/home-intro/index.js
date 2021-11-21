@@ -41,6 +41,7 @@ const HomeIntro = ({
                   style={{ maxWidth: "100vw", maxHeight: "100vh" }}
                   height="400"
                   src={"https://www.youtube.com/embed/vY09Lo4wRY8"}
+                  allowFullScreen
                 />
               </Modal>
             </Flex>

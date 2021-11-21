@@ -7,7 +7,7 @@ import logo from "../../images/logo-4x.png";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
-import youtube from "../../images/icons/Youtube.svg";
+import youtube from "../../images/icons/Youtube.png";
 import infospec from "../../images/itspec/info-spec.png";
 import teamImg1 from "../../images/team/team1.png";
 import teamImg2 from "../../images/team/team2.png";

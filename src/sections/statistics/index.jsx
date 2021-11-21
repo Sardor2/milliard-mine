@@ -18,19 +18,19 @@ const Statistics = ({ tags }) => {
   const [currentTag, setCurrentTag] = React.useState(0);
   const total = React.useMemo(
     () =>
-      tags.reduce((acc, curr) => {
+      tags?.reduce((acc, curr) => {
         return acc + curr.count;
       }, 0),
     [tags]
   );
 
   const data = {
-    labels: tags.map((item) => item.tag),
+    labels: tags?.map((item) => item.tag),
     datasets: [
       {
         label: false,
-        data: tags.map((item) => item.count),
-        backgroundColor: tags.map((item) => item.color),
+        data: tags?.map((item) => item.count),
+        backgroundColor: tags?.map((item) => item.color),
         // borderColor: [
         //   "rgba(255, 99, 132, 1)",
         //   "rgba(54, 162, 235, 1)",
@@ -54,7 +54,7 @@ const Statistics = ({ tags }) => {
             <h2>Biz qaysi sohalarda faoliyat yuritamiz</h2>
 
             <div className="tags">
-              {tags.map((item, index) => (
+              {tags?.map((item, index) => (
                 <span
                   onClick={() => setCurrentTag(index)}
                   className={`tag ${index === currentTag ? "active" : ""}`}
@@ -68,10 +68,10 @@ const Statistics = ({ tags }) => {
           <div className="pie-container">
             <Doughnut type="doughnut" data={data} options={options} />
             <span className="center-text">
-              {((tags[currentTag]?.count * 100) / total).toFixed(2)}%
+              {tags && ((tags[currentTag]?.count * 100) / total).toFixed(2)}%
             </span>
             <div className="legends">
-              {tags.map((item, index) => (
+              {tags?.map((item, index) => (
                 <div className="legend">
                   <h5>{item.tag}</h5>
                   <span>{item.count}</span>

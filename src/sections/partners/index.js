@@ -42,7 +42,7 @@ const Partners = ({ partners }) => {
             },
           }}
         >
-          {partners.map((item, index) => (
+          {partners?.map((item, index) => (
             <SwiperSlide key={index}>
               <a style={{ display: "block" }} href={item.url} target="_blank">
                 <div className="box flex-center">

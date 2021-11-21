@@ -27,10 +27,11 @@ const HomePage = () => {
   const { loading, data } = useHomePageData();
   const { t } = useTranslation();
 
-  const shouldRenderLanguageBanner = React.useMemo(
-    () => (getLang() ? false : true),
-    []
-  );
+  const shouldRenderLanguageBanner = React.useMemo(() => {
+    if (typeof window !== "undefined") {
+      return !window.localStorage.getItem("lang");
+    }
+  }, []);
 
   return (
     <PageSpinner loading={loading}>

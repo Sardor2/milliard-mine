@@ -30,6 +30,10 @@
     transform: translateX(0);
     animation: animText 20s linear infinite;
   }
+
+  @media (max-width: 576px) {
+    padding: 8px 0;
+  }
 }
 
 @keyframes animText {

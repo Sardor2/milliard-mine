@@ -1,6 +1,6 @@
 export const getLang = () => {
   if (typeof window !== "undefined") {
-    return window.localStorage.getItem("lang");
+    return window.localStorage.getItem("lang") ?? "uz";
   }
   return "uz";
 };
