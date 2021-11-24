@@ -16,26 +16,28 @@ const Projects = ({ projects }) => {
   const { t } = useTranslation();
   return (
     <section id="projects" className="projects-section">
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <h2>{t("parts_from_meetings")}</h2>
-        <div className="my-masonry-grid">
-          {projects?.map((project, index) => (
-            <div key={index} className="project-card">
-              <div className="teaser">
-                <h3 className="title">{project.title}</h3>
-                <span className="date">
-                  {new Date(project.created_at)
-                    .toLocaleDateString()
-                    .replaceAll("/", ".")}
-                </span>
-              </div>
-              <div className="image">
-                <img src={project.image_url} alt={project.title} />
-              </div>
+        <div className="scroll-container">
+          <div className="my-masonry-grid">
+            {projects?.map((project, index) => (
+              <div key={index} className="project-card">
+                <div className="teaser">
+                  <h3 className="title">{project.title}</h3>
+                  <span className="date">
+                    {new Date(project.created_at)
+                      .toLocaleDateString()
+                      .replaceAll("/", ".")}
+                  </span>
+                </div>
+                <div className="image">
+                  <img src={project.image_url} alt={project.title} />
+                </div>
 
-              <div className="overlay"></div>
-            </div>
-          ))}
+                <div className="overlay"></div>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

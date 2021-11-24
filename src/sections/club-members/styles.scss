@@ -157,11 +157,14 @@ section.club-members {
 }
 
 .swiper {
+  padding-top: 20px;
   &-slide {
     &-thumb {
       &-active {
         .each-member {
           transform: translateY(-0.5rem);
+          z-index: 2;
+
         }
         img {
           filter: grayscale(0.3);
@@ -171,6 +174,8 @@ section.club-members {
     }
   }
 }
+
+
 
 .mySwiper {
   position: relative;

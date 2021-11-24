@@ -52,7 +52,11 @@ const Contact = ({ renderAnimatedText = false }) => {
       id={"contact"}
     >
       {renderAnimatedText && (
-        <AnimText title={"CONTACT CONTACT CONTACT CONTACT CONTACT"} />
+        <AnimText
+          title={`${t("contact")} ${t("contact")} ${t("contact")} ${t(
+            "contact"
+          )} ${t("contact")}`}
+        />
       )}
       <div className="contact-box">
         <h2>{t("invest_or_be_investor")}</h2>

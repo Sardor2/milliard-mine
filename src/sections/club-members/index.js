@@ -95,7 +95,7 @@ const ClubMembers = ({ members }) => {
             }}
           >
             {members?.map((member) => (
-              <SwiperSlide key={member.title}>
+              <SwiperSlide className="bottom-slider" key={member.title}>
                 <div className={"each-member"}>
                   <img
                     className="filter grayscale"

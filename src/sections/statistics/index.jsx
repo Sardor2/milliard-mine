@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.scss";
 import Container from "../../components/container";
 import { Doughnut, Line } from "react-chartjs-2";
-import { lineOptions, linedata } from "./line-chart-data";
+import { lineOptions, getGradient } from "./line-chart-data";
 
 const options = {
   plugins: {
@@ -14,7 +14,7 @@ const options = {
   cutout: "60%",
 };
 
-const Statistics = ({ tags }) => {
+const Statistics = ({ tags = [] }) => {
   const [currentTag, setCurrentTag] = React.useState(0);
   const total = React.useMemo(
     () =>
@@ -31,14 +31,6 @@ const Statistics = ({ tags }) => {
         label: false,
         data: tags?.map((item) => item.count),
         backgroundColor: tags?.map((item) => item.color),
-        // borderColor: [
-        //   "rgba(255, 99, 132, 1)",
-        //   "rgba(54, 162, 235, 1)",
-        //   "rgba(255, 206, 86, 1)",
-        //   "rgba(75, 192, 192, 1)",
-        //   "rgba(153, 102, 255, 1)",
-        //   "rgba(255, 159, 64, 1)",
-        // ],
         borderWidth: 0,
         weight: 0.5,
         // spacing: 10,
@@ -46,6 +38,46 @@ const Statistics = ({ tags }) => {
       },
     ],
   };
+
+  const lineData = React.useMemo(() => ({
+    labels: tags?.map((item) => item.tag),
+    datasets: [
+      {
+        label: "# of Projects",
+        data: [9, 8, 4, 5, 3.5],
+        fill: false,
+        backgroundColor: "#544179",
+        tension: 0.3,
+        borderColor: function (context) {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+
+          if (!chartArea) {
+            // This case happens on initial chart load
+            return null;
+          }
+          return getGradient(ctx, chartArea);
+        },
+        pointBorderWidth: 0,
+        pointBackgroundColor: function (context) {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+
+          if (!chartArea) {
+            // This case happens on initial chart load
+            return null;
+          }
+          return getGradient(ctx, chartArea);
+        },
+        pointHoverBorderWidth: 4,
+        pointBorderColor: "white",
+        pointRadius: 5,
+        pointHoverRadius: 15,
+        pointStyle: "rectRounded",
+      },
+    ],
+  }));
+
   return (
     <section id="statistics">
       <Container>
@@ -58,6 +90,7 @@ const Statistics = ({ tags }) => {
                 <span
                   onClick={() => setCurrentTag(index)}
                   className={`tag ${index === currentTag ? "active" : ""}`}
+                  key={item.color}
                 >
                   #{item.tag}
                 </span>
@@ -72,7 +105,7 @@ const Statistics = ({ tags }) => {
             </span>
             <div className="legends">
               {tags?.map((item, index) => (
-                <div className="legend">
+                <div key={item.color} className="legend">
                   <h5>{item.tag}</h5>
                   <span>{item.count}</span>
                   <div
@@ -85,9 +118,8 @@ const Statistics = ({ tags }) => {
           </div>
         </div>
       </Container>
-
       <div className="bottom-line-graph">
-        <Line data={linedata} options={lineOptions} />
+        <Line data={lineData} options={lineOptions} />
       </div>
     </section>
   );
