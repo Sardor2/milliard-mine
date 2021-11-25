@@ -3,6 +3,7 @@ import "./styles.scss";
 import Container from "../../components/container";
 import { Doughnut, Line } from "react-chartjs-2";
 import { lineOptions, getGradient } from "./line-chart-data";
+import { useTranslation } from "react-i18next";
 
 const options = {
   plugins: {
@@ -15,6 +16,7 @@ const options = {
 };
 
 const Statistics = ({ tags = [] }) => {
+  const { t } = useTranslation();
   const [currentTag, setCurrentTag] = React.useState(0);
   const total = React.useMemo(
     () =>
@@ -43,7 +45,7 @@ const Statistics = ({ tags = [] }) => {
     labels: tags?.map((item) => item.tag),
     datasets: [
       {
-        label: "# of Projects",
+        label: ` ${t("annual_income")}`,
         data: [9, 8, 4, 5, 3.5],
         fill: false,
         backgroundColor: "#544179",
@@ -101,12 +103,12 @@ const Statistics = ({ tags = [] }) => {
           <div className="pie-container">
             <Doughnut type="doughnut" data={data} options={options} />
             <span className="center-text">
-              {tags && ((tags[currentTag]?.count * 100) / total).toFixed(2)}%
+              {tags && ((tags[currentTag]?.count * 100) / total).toFixed(1)}%
             </span>
             <div className="legends">
               {tags?.map((item, index) => (
                 <div key={item.color} className="legend">
-                  <h5>{item.tag}</h5>
+                  <div className="legend-tag">{item.tag}</div>
                   <span>{item.count}</span>
                   <div
                     style={{ backgroundColor: item.color }}
@@ -118,8 +120,15 @@ const Statistics = ({ tags = [] }) => {
           </div>
         </div>
       </Container>
-      <div className="bottom-line-graph">
-        <Line data={lineData} options={lineOptions} />
+      <div className="max-w-full overflow-x-scroll">
+        <div className="bottom-line-graph">
+          <div className="grid-lines">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+          <Line data={lineData} options={lineOptions} />
+        </div>
       </div>
     </section>
   );

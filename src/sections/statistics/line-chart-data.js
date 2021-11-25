@@ -23,7 +23,7 @@ export const linedata = {
   labels: ["1", "2", "3", "4", "5", "6"],
   datasets: [
     {
-      label: "# of Projects",
+      label: "  Yillik Aylanmasi",
       data: [0, 3, 2, 3, 1.5, 0.6],
       fill: false,
       backgroundColor: "#544179",
@@ -60,7 +60,6 @@ export const linedata = {
 
 export const lineOptions = {
   maintainAspectRatio: false,
-  responsive: true,
 
   plugins: {
     legend: {
@@ -82,7 +81,7 @@ export const lineOptions = {
         },
       },
       grid: {
-        display: true,
+        display: false,
         color: "#3D3C41",
         drawBorder: false,
         drawTicks: false,
@@ -97,7 +96,7 @@ export const lineOptions = {
         },
       },
       grid: {
-        display: true,
+        display: false,
       },
     },
   },
