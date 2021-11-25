@@ -44,7 +44,7 @@ const BusinessTypes = ({ businessTypes }) => {
           },
         }}
       >
-        {businessTypes.map((item, i) => (
+        {businessTypes?.map((item, i) => (
           <SwiperSlide key={item.id}>
             <Link to={`/businesses/${item?.slug}`}>
               <BusinessCard img={item.logo_url} name={item.title} />

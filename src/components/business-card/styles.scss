@@ -5,6 +5,8 @@ $border: 2px;
   width: 100%;
   max-width: 170px;
   max-height: 170px;
+  min-width: 170px;
+  min-height: 170px;
   //margin: auto;
   display: flex;
   align-items: center;
@@ -20,6 +22,8 @@ $border: 2px;
   @media (max-width: 576px) {
     max-height: 113px;
     max-width: 113px;
+    min-height: 113px;
+    min-width: 113px;
   }
 
   &:before {

@@ -4,42 +4,51 @@ import logo from "../../images/logo-4x.png";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
-import youtube from "../../images/icons/Youtube.svg";
+import youtube from "../../images/icons/Youtube.png";
 import Container from "../container";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
 import Select from "../select";
+import { usePages } from "../../services/use-pages";
+import { getLang, setLang } from "../../utils";
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const handleLang = (e) => {
-    i18n.changeLanguage(e.target.value);
-
+    setLang(e.target.value);
     if (typeof window !== `undefined`) {
       window.location.reload();
     }
   };
+
+  const { data, loading } = usePages();
   return (
     <footer>
       <Container maxWidth={"lg"}>
         <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between my-20">
           <Link to="/" className="block md:inline-block mb-20 md:mb-0">
-            <img className={"logo"} src={logo} alt="" />
+            <img className="logo" src={logo} alt="" />
           </Link>
 
           <div className="flex max-w-3xl">
             <div className="mx-10 md:mx-20 lg:mx-40">
               <div className="font-bold text-4xl mb-5">{t("support")}</div>
               <div className="flex flex-col">
-                <Link to="" className="mb-2">
-                  {t("contact_us")}
-                </Link>
-                <Link to="" className="mb-2">
-                  {t("about")}
-                </Link>
-                <Link to="" className="mb-2">
-                  {t("club_members")}
-                </Link>
+                {data?.map((item) =>
+                  item.type === "support" ? (
+                    <Link to={item.page}>{item.title}</Link>
+                  ) : null
+                )}
+
+                {/*<Link to="" className="mb-2">*/}
+                {/*  {t("contact_us")}*/}
+                {/*</Link>*/}
+                {/*<Link to="" className="mb-2">*/}
+                {/*  {t("about")}*/}
+                {/*</Link>*/}
+                {/*<Link to="" className="mb-2">*/}
+                {/*  {t("club_members")}*/}
+                {/*</Link>*/}
               </div>
             </div>
 
@@ -61,7 +70,7 @@ const Footer = () => {
               </div>
               <div className="mt-6">
                 <Select
-                  value={i18n.language}
+                  value={getLang()}
                   onChange={handleLang}
                   className="lang"
                 >

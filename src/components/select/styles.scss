@@ -24,8 +24,18 @@
     background: $linear-gold;
     border: none;
     //border: 1px solid gold;
-
   }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    z-index: 3;
+    pointer-events: none;
+  }
+
   select {
     font-family: inherit;
     font-weight: inherit;
@@ -40,6 +50,8 @@
     z-index: 2;
     width: 100%;
     padding: .8rem 2rem;
+    padding-right: 20px;
+    -webkit-appearance: none;
 
     &:focus ~ .border {
       margin: -2px;

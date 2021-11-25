@@ -11,7 +11,7 @@ import Button from "../../components/button";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
-import youtube from "../../images/icons/Youtube.svg";
+import youtube from "../../images/icons/Youtube.png";
 import clubMember from "../../images/club-members/club-member-1.png";
 // import bottomMember from "../../images/club-members/club-member-bottom-1.png";
 import circlesSvg from "../../images/circles.svg";
@@ -62,18 +62,19 @@ const ClubMembers = ({ members }) => {
           className="mySwiper2"
           speed={700}
         >
-          {members.map((member) => (
-            <SwiperSlide key={member.name}>
-              <ClubMember
-                name={member.title}
-                img={member.logo_url}
-                description={member.description}
-                website={member.website}
-                socials={member.socials}
-                {...member}
-              />
-            </SwiperSlide>
-          ))}
+          {members &&
+            members?.map((member) => (
+              <SwiperSlide key={member.name}>
+                <ClubMember
+                  name={member.title}
+                  img={member.logo_url}
+                  description={member.description}
+                  website={member.website}
+                  socials={member.socials}
+                  {...member}
+                />
+              </SwiperSlide>
+            ))}
         </Swiper>
 
         <div className="members">
@@ -93,8 +94,8 @@ const ClubMembers = ({ members }) => {
               },
             }}
           >
-            {members.map((member) => (
-              <SwiperSlide key={member.title}>
+            {members?.map((member) => (
+              <SwiperSlide className="bottom-slider" key={member.title}>
                 <div className={"each-member"}>
                   <img
                     className="filter grayscale"

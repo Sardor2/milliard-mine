@@ -17,7 +17,9 @@ const fetchAll = async () => {
       api("partners").then((res) => res.data),
       api("images").then((res) => res.data),
       api("types").then((res) => res.data),
-      api("tags").then((res) => res.data),
+      api("tags").then((res) =>
+        res.data.map((item) => ({ ...item, count: +item.count }))
+      ),
     ]);
 
   return {
