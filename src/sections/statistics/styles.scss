@@ -14,11 +14,14 @@
   }
 
   .bottom-line-graph {
+
+
     margin-top: 8rem;
     height: 400px;
     width: 102vw;
     margin-left: -3rem;
     position: relative;
+
 
     .grid-lines {
       position: absolute;
@@ -31,6 +34,9 @@
       flex-direction: column;
       justify-content: space-between;
       width: 100vw;
+
+
+
 
 
       .line {

@@ -1,13 +1,15 @@
 section.projects-section {
 padding: 10rem 0;
 
+
+
   h2 {
     margin-bottom: 8rem;
   }
   // Project Card
   .project-card {
     overflow: hidden;
-    //cursor: pointer;
+    cursor: pointer;
     position: relative;
     .teaser {
       position: absolute;
@@ -53,7 +55,7 @@ padding: 10rem 0;
 
   .scroll-container {
     max-height: 1290px;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-right: 50px;
   }
   ::-webkit-scrollbar {
@@ -61,7 +63,6 @@ padding: 10rem 0;
     height: 5px;
     opacity: 0.8;
   }
-
   ::-webkit-scrollbar-track {
     background-color: #3c3939;
     border: 3px solid #3c3939;
@@ -120,45 +121,59 @@ padding: 10rem 0;
 
       .project-card {
         max-width: 730px;
+        max-height: 400px;
         grid-column: unset !important;
         grid-row: unset !important;
       }
     }
+
+    @media (max-width: 576px) {
+      .project-card {
+        max-height: 24.6rem;
+        min-height: 24.6rem;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+        overflow: hidden;
+        .overlay {
+          display: unset;
+        }
+        .teaser {
+          bottom: 0.6rem;
+          left: 0.6rem;
+          top: unset;
+
+          .title {
+            font-size: 2.4rem;
+          }
+
+          .date {
+            font-size: 1.2rem;
+          }
+        }
+        .image {
+          max-height: 100%;
+          height: 100%;
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+  }
+
+  .load-more-btn {
+      margin: 10rem auto 0;
+      display: block;
   }
 
   @media (max-width: 576px) {
     h2 {
       margin-bottom: 4rem;
       font-size: 2.4rem;
-    }
-    .project-card {
-      max-height: 24.6rem;
-      min-height: 24.6rem;
-      overflow: hidden;
-      .overlay {
-        display: unset;
-      }
-      .teaser {
-        bottom: 0.6rem;
-        left: 0.6rem;
-        top: unset;
-
-        .title {
-          font-size: 2.4rem;
-        }
-
-        .date {
-          font-size: 1.2rem;
-        }
-      }
-      .image {
-        max-height: 100%;
-        height: 100%;
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
-      }
     }
 
     .my-masonry-grid {
