@@ -27,28 +27,13 @@ const Footer = () => {
       <Container maxWidth={"lg"}>
         <div className="flex flex-col md:flex-row items-center md:items-start md:justify-between my-20">
           <Link to="/" className="block md:inline-block mb-20 md:mb-0">
-<<<<<<< HEAD
-            <img className={"logo"} src={logo} alt="" />
-=======
             <img className="logo" src={logo} alt="" />
->>>>>>> main
           </Link>
 
           <div className="flex max-w-3xl">
             <div className="mx-10 md:mx-20 lg:mx-40">
               <div className="font-bold text-4xl mb-5">{t("support")}</div>
               <div className="flex flex-col">
-<<<<<<< HEAD
-                <Link to="" className="mb-2">
-                  {t("contact_us")}
-                </Link>
-                <Link to="" className="mb-2">
-                  {t("about")}
-                </Link>
-                <Link to="" className="mb-2">
-                  {t("club_members")}
-                </Link>
-=======
                 {data?.map((item) =>
                   item.type === "support" ? (
                     <Link to={item.page}>{item.title}</Link>
@@ -64,7 +49,6 @@ const Footer = () => {
                 {/*<Link to="" className="mb-2">*/}
                 {/*  {t("club_members")}*/}
                 {/*</Link>*/}
->>>>>>> main
               </div>
             </div>
 
