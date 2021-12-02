@@ -10,7 +10,9 @@ const Button = ({
   onClick = () => null,
 }) => (
   <button
-    className={`btn btn-${variant} ${loading ? "loading" : ""} ${className}`}
+    className={`btn btn-${variant} ${
+      loading ? "btn-loading" : ""
+    } ${className}`}
     onClick={onClick}
   >
     {children}

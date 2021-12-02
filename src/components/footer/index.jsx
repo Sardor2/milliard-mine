@@ -4,7 +4,7 @@ import logo from "../../images/logo-4x.png";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
-import youtube from "../../images/icons/Youtube.png";
+import youtube from "../../images/icons/Youtube.svg";
 import Container from "../container";
 import { Link } from "gatsby";
 import { useTranslation } from "react-i18next";
