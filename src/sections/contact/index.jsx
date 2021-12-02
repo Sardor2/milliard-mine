@@ -4,7 +4,7 @@ import "./styles.scss";
 import Button from "../../components/button";
 import TextArea from "../../components/text-area";
 import map from "../../images/map.png";
-import youtube from "../../images/icons/Youtube.png";
+import youtube from "../../images/icons/Youtube.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import facebook from "../../images/icons/Facebook.svg";
 import twitter from "../../images/icons/Twitter.svg";
@@ -92,7 +92,6 @@ const Contact = ({ renderAnimatedText = false }) => {
                 value={formValues.message}
                 name={"message"}
                 label={t("your_message")}
-                required
               />
             </div>
             <Button loading={loading} variant="filled">

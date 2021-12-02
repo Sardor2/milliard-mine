@@ -3,7 +3,7 @@ import Container from "../../components/container";
 import "./styles.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import SwiperCore, { Navigation, Pagination } from "swiper";
+import SwiperCore, { Navigation } from "swiper";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
