@@ -19,46 +19,60 @@
     height: 9.6rem;
     color: $color-dark;
     border-radius: 1.6rem;
-    box-shadow: 0px 3rem 4rem rgba(212, 217, 232, 0.2);
+
+
 
     .image {
       max-width: 60%;
     }
   }
 
-  .partners-swiper {
+  .swiper {
     margin-top: 13rem;
+    background-color: transparent;
+    &::before, &::after {
+        content: "";
+        box-shadow: 37px 0 120px 70px rgb(24 25 31 / 70%);
+    }
+
+    .swiper-wrapper {
+       padding: 5rem 2rem;
+      @media (max-width: 576px) {
+        padding: .5rem;
+        padding-bottom: 1rem;
+      }
+    }
+    .swiper-slide {
+      height: max-content;
+      .box {
+        box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
+
+      }
+    }
     //padding-right: 3rem;
-    padding-left: 2rem;
+    //padding-left: 2rem;
     //overflow: unset;
+    //
+    //&::before,&::after {
+    //  box-shadow: 37px 5px 120px 120px rgb(24 25 31 / 70%);
+    //}
 
     .swiper-button-next,.swiper-button-prev {
       color: gray !important;
-
+      right: 0;
       &:after {
         font-size: 2.5rem !important;
       }
     }
-
-    .swiper-button-next {
-      right: 0rem;
-    }
-
-    .swiper-slide {
-    }
-
-    .swiper-wrapper {
-    }
-
     .swiper-button-prev {
       left: 0;
     }
   }
 
-
   @media (max-width: 576px) {
-
-
+    .mySwiper {
+      margin-top: 6rem;
+    }
     .box {
       width: 9rem;
       height: 5rem;
@@ -69,9 +83,7 @@
     h3 {
       font-size: 1.2rem;
     }
-    .partners-swiper {
-      margin-top: 6rem;
-    }
+
   }
 
 

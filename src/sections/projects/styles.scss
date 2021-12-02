@@ -1,5 +1,7 @@
 section.projects-section {
-  padding: 10rem 0;
+padding: 10rem 0;
+
+
 
   h2 {
     margin-bottom: 8rem;
@@ -7,7 +9,7 @@ section.projects-section {
   // Project Card
   .project-card {
     overflow: hidden;
-    //cursor: pointer;
+    cursor: pointer;
     position: relative;
     .teaser {
       position: absolute;
@@ -20,7 +22,6 @@ section.projects-section {
       .date {
         font-size: 1.8rem;
       }
-
     }
 
     .overlay {
@@ -39,6 +40,7 @@ section.projects-section {
       img {
         height: 100%;
         width: 100%;
+        object-fit: cover;
       }
     }
     @media (min-width: 1200px) {
@@ -49,61 +51,123 @@ section.projects-section {
         }
       }
     }
-
-
-
   }
 
+  .scroll-container {
+    max-height: 1290px;
+    overflow-y: auto;
+    padding-right: 50px;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    opacity: 0.8;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #3c3939;
+    border: 3px solid #3c3939;
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 50%;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 20px;
+  }
 
   .my-masonry-grid {
     position: relative;
     display: grid;
     max-width: 100%;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    grid-template-rows: minmax(300px,auto);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: minmax(300px, auto);
     grid-auto-flow: dense;
     grid-gap: 30px;
+    // margin-right: 30px;
 
-    .project-card:nth-child(1) {
+    .project-card:nth-child(6n + 1) {
       grid-column: span 1;
       grid-row: span 2;
     }
 
-    .project-card:nth-child(2) {
+    .project-card:nth-child(6n + 2) {
       grid-column: span 2;
       grid-row: span 1;
     }
 
-    .project-card:nth-child(3) {
+    .project-card:nth-child(6n + 3) {
       grid-column: span 1;
       grid-row: span 1;
     }
 
-    .project-card:nth-child(4) {
+    .project-card:nth-child(6n + 4) {
       grid-column: span 1;
       grid-row: span 2;
     }
-    .project-card:nth-child(5) {
+    .project-card:nth-child(6n + 5) {
       grid-column: span 2;
       grid-row: span 2;
     }
 
-    .project-card:nth-child(6) {
+    .project-card:nth-child(6n + 6) {
       grid-column: span 1;
       grid-row: span 1;
     }
 
-    @media (max-width: 991px){
-      grid-template-columns: repeat(auto-fill,minmax(50%,1fr));
-      grid-template-rows: minmax(auto,auto);
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+      grid-template-rows: minmax(auto, auto);
 
       .project-card {
         max-width: 730px;
+        max-height: 400px;
         grid-column: unset !important;
         grid-row: unset !important;
       }
     }
 
+    @media (max-width: 576px) {
+      .project-card {
+        max-height: 24.6rem;
+        min-height: 24.6rem;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+        overflow: hidden;
+        .overlay {
+          display: unset;
+        }
+        .teaser {
+          bottom: 0.6rem;
+          left: 0.6rem;
+          top: unset;
+
+          .title {
+            font-size: 2.4rem;
+          }
+
+          .date {
+            font-size: 1.2rem;
+          }
+        }
+        .image {
+          max-height: 100%;
+          height: 100%;
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+  }
+
+  .load-more-btn {
+      margin: 10rem auto 0;
+      display: block;
   }
 
   @media (max-width: 576px) {
@@ -111,40 +175,18 @@ section.projects-section {
       margin-bottom: 4rem;
       font-size: 2.4rem;
     }
-    .project-card {
-      max-height: 24.6rem;
-      min-height: 24.6rem;
-      overflow: hidden;
-      .overlay {
-        display: unset;
-      }
-      .teaser {
-        bottom: .6rem;
-        left: .6rem;
-        top: unset;
-
-        .title {
-          font-size: 2.4rem;
-        }
-
-        .date {
-          font-size: 1.2rem;
-        }
-      }
-      .image {
-        max-height: 100%;
-        height: 100%;
-        img {
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
 
     .my-masonry-grid {
       grid-gap: 20px;
     }
+
+    .scroll-container {
+      max-height: unset;
+      overflow-y: auto;
+      padding-right: 0;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
-
-
 }

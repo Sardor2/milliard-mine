@@ -2,8 +2,8 @@ import React from "react";
 import "./styles.scss";
 import Container from "../../components/container";
 import { Doughnut, Line } from "react-chartjs-2";
-import { randomColor } from "randomcolor";
-import { lineOptions, linedata } from "./line-chart-data";
+import { lineOptions, getGradient } from "./line-chart-data";
+import { useTranslation } from "react-i18next";
 
 const options = {
   plugins: {
@@ -15,41 +15,24 @@ const options = {
   cutout: "60%",
 };
 
-const Statistics = ({ tags }) => {
+const Statistics = ({ tags = [] }) => {
+  const { t } = useTranslation();
   const [currentTag, setCurrentTag] = React.useState(0);
   const total = React.useMemo(
     () =>
-      tags.reduce((acc, curr) => {
+      tags?.reduce((acc, curr) => {
         return acc + curr.count;
       }, 0),
     [tags]
   );
-  console.log(total);
-
-  const COLORS = React.useMemo(
-    () =>
-      randomColor({
-        count: tags.length,
-        luminosity: "light",
-      }),
-    [tags]
-  );
 
   const data = {
-    labels: tags.map((item) => item.tag),
+    labels: tags?.map((item) => item.tag),
     datasets: [
       {
         label: false,
-        data: tags.map((item) => item.count),
-        backgroundColor: COLORS,
-        // borderColor: [
-        //   "rgba(255, 99, 132, 1)",
-        //   "rgba(54, 162, 235, 1)",
-        //   "rgba(255, 206, 86, 1)",
-        //   "rgba(75, 192, 192, 1)",
-        //   "rgba(153, 102, 255, 1)",
-        //   "rgba(255, 159, 64, 1)",
-        // ],
+        data: tags?.map((item) => item.count),
+        backgroundColor: tags?.map((item) => item.color),
         borderWidth: 0,
         weight: 0.5,
         // spacing: 10,
@@ -57,6 +40,46 @@ const Statistics = ({ tags }) => {
       },
     ],
   };
+
+  const lineData = React.useMemo(() => ({
+    labels: tags?.map((item) => item.tag),
+    datasets: [
+      {
+        label: ` ${t("annual_income")}`,
+        data: [9, 8, 4, 5, 3.5],
+        fill: false,
+        backgroundColor: "#544179",
+        tension: 0.3,
+        borderColor: function (context) {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+
+          if (!chartArea) {
+            // This case happens on initial chart load
+            return null;
+          }
+          return getGradient(ctx, chartArea);
+        },
+        pointBorderWidth: 0,
+        pointBackgroundColor: function (context) {
+          const chart = context.chart;
+          const { ctx, chartArea } = chart;
+
+          if (!chartArea) {
+            // This case happens on initial chart load
+            return null;
+          }
+          return getGradient(ctx, chartArea);
+        },
+        pointHoverBorderWidth: 4,
+        pointBorderColor: "white",
+        pointRadius: 5,
+        pointHoverRadius: 15,
+        pointStyle: "rectRounded",
+      },
+    ],
+  }));
+
   return (
     <section id="statistics">
       <Container>
@@ -65,10 +88,11 @@ const Statistics = ({ tags }) => {
             <h2>Biz qaysi sohalarda faoliyat yuritamiz</h2>
 
             <div className="tags">
-              {tags.map((item, index) => (
+              {tags?.map((item, index) => (
                 <span
                   onClick={() => setCurrentTag(index)}
                   className={`tag ${index === currentTag ? "active" : ""}`}
+                  key={item.color}
                 >
                   #{item.tag}
                 </span>
@@ -79,15 +103,15 @@ const Statistics = ({ tags }) => {
           <div className="pie-container">
             <Doughnut type="doughnut" data={data} options={options} />
             <span className="center-text">
-              {(tags[currentTag].count / total).toFixed(2) * 100}%
+              {tags && ((tags[currentTag]?.count * 100) / total).toFixed(1)}%
             </span>
             <div className="legends">
-              {tags.map((item, index) => (
-                <div className="legend">
-                  <h5>{item.tag}</h5>
+              {tags?.map((item, index) => (
+                <div key={item.color} className="legend">
+                  <div className="legend-tag">{item.tag}</div>
                   <span>{item.count}</span>
                   <div
-                    style={{ backgroundColor: COLORS[index] }}
+                    style={{ backgroundColor: item.color }}
                     className="dot"
                   ></div>
                 </div>
@@ -96,9 +120,15 @@ const Statistics = ({ tags }) => {
           </div>
         </div>
       </Container>
-
-      <div className="bottom-line-graph">
-        <Line data={linedata} options={lineOptions} />
+      <div className="max-w-full overflow-x-scroll">
+        <div className="bottom-line-graph">
+          <div className="grid-lines">
+            <div className="line"></div>
+            <div className="line"></div>
+            <div className="line"></div>
+          </div>
+          <Line data={lineData} options={lineOptions} />
+        </div>
       </div>
     </section>
   );

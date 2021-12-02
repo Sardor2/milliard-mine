@@ -4,6 +4,7 @@ const styles = {
   display: "flex",
   flexDirection: "column",
   height: "100vh",
+  overflowX: "hidden",
 };
 
 const GlobalWrapper = ({ children }) => {

@@ -1,4 +1,4 @@
-function getGradient(ctx, chartArea) {
+export function getGradient(ctx, chartArea) {
   let width, height, gradient;
   const chartWidth = chartArea.right - chartArea.left;
   const chartHeight = chartArea.bottom - chartArea.top;
@@ -23,7 +23,7 @@ export const linedata = {
   labels: ["1", "2", "3", "4", "5", "6"],
   datasets: [
     {
-      label: "# of Projects",
+      label: "  Yillik Aylanmasi",
       data: [0, 3, 2, 3, 1.5, 0.6],
       fill: false,
       backgroundColor: "#544179",
@@ -50,7 +50,7 @@ export const linedata = {
         return getGradient(ctx, chartArea);
       },
       pointHoverBorderWidth: 4,
-      pointBorderColor: "white",
+      pointBorderColor: "transparent",
       pointRadius: 5,
       pointHoverRadius: 15,
       pointStyle: "rectRounded",
@@ -60,7 +60,7 @@ export const linedata = {
 
 export const lineOptions = {
   maintainAspectRatio: false,
-  responsive: true,
+
   plugins: {
     legend: {
       display: false,
@@ -81,8 +81,10 @@ export const lineOptions = {
         },
       },
       grid: {
+        display: false,
         color: "#3D3C41",
         drawBorder: false,
+        drawTicks: false,
       },
     },
     x: {

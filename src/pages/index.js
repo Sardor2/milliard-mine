@@ -19,20 +19,19 @@ import Partners from "../sections/partners";
 import { useTranslation } from "react-i18next";
 import Statistics from "../sections/statistics";
 import Modal from "../components/modal";
-import AnimText from "../components/animText";
+import LanguageBanner from "../components/language-banner";
+import { useModal } from "../hooks";
+import { getLang } from "../utils";
 
 const HomePage = () => {
   const { loading, data } = useHomePageData();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const [modalOpen, setModalOpen] = React.useState(false);
-
-  const handleClick = (e) => {
-    i18n.changeLanguage(e.target.id);
-    if (typeof window !== `undefined`) {
-      window.location.reload();
+  const shouldRenderLanguageBanner = React.useMemo(() => {
+    if (typeof window !== "undefined") {
+      return !window.localStorage.getItem("lang");
     }
-  };
+  }, []);
 
   return (
     <PageSpinner loading={loading}>
@@ -59,6 +58,7 @@ const HomePage = () => {
         <Partners partners={data?.partners} />
         <Statistics tags={data?.tags} />
         <Contact />
+<<<<<<< HEAD
         <button onClick={() => setModalOpen(true)} className="btn">
           Click me
         </button>
@@ -80,6 +80,10 @@ const HomePage = () => {
               </div>
             </div>
           </div>
+=======
+        <Modal open={shouldRenderLanguageBanner}>
+          <LanguageBanner />
+>>>>>>> main
         </Modal>
       </MainLayout>
     </PageSpinner>
