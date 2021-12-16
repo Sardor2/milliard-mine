@@ -4,7 +4,7 @@ import "./styles.scss";
 import play from "../../images/play.svg";
 import Container from "../../components/container";
 import Flex from "../../components/flex";
-import ContactMemberForm from "../../components/contact-member-form";
+// import ContactMemberForm from "../../components/contact-member-form";
 import Modal from "../../components/modal";
 import { useModal } from "../../hooks";
 // import { useMembers } from "../../services/use-members";

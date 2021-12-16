@@ -106,7 +106,6 @@ const Contact = ({ renderAnimatedText = false }) => {
               <a className="phone" href="tel:+998 550 55 50">
                 +998 550 55 50
               </a>
-              <a href="tel">+998 550 55 50</a>
 
               <div className="socials">
                 <a href="#" className="social-icon">
