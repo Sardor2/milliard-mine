@@ -59,7 +59,7 @@ const Contact = ({ renderAnimatedText = false }) => {
         />
       )}
       <div className="contact-box">
-        <h2>{t("invest_or_be_investor")}</h2>
+        <h2>{t("leave_info_we_contact_you")}</h2>
         <form
           onSubmit={handleSubmit}
           className="flex justify-between flex-wrap mt-20"
@@ -101,32 +101,52 @@ const Contact = ({ renderAnimatedText = false }) => {
           <div className="flex flex-col pt-16 lg:w-5/12  lg:ml-10">
             <div className="address-box flex flex-col lg:pl-8">
               <address>
-                Toshkent shahar, qayerdir kocha 17 Nimadirni ro’parasida
+                Toshkent shahar, Shahrisabz ko'chasi 5a, Seul Plaza 9-qavat
               </address>
-              <a className="phone" href="tel:+998 550 55 50">
-                +998 550 55 50
+              <a className="phone" href="tel:+998555002220">
+                +998 (55) 500-22-20
               </a>
 
               <div className="socials">
-                <a href="#" className="social-icon">
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UCUehHzRD5cp4yfnbCNeNg5Q"
+                  className="social-icon"
+                >
                   <img src={youtube} alt="youtube" />
                 </a>
-                <a href="#" className="social-icon">
+                <a
+                  target={"_blank"}
+                  href="https://www.instagram.com/alisherisae​​"
+                  className="social-icon"
+                >
                   <img src={instagram} alt="instagram" />
                 </a>
 
-                <a href="#" className="social-icon">
+                <a
+                  target={"_blank"}
+                  href="https://www.facebook.com/alisherisaevblogi/"
+                  className="social-icon"
+                >
                   <img src={facebook} alt="facebook" />
                 </a>
-                <a href="#" className="social-icon">
+                <a
+                  href="https://t.me/AlisherIsaev_blogi​​"
+                  target={"_blank"}
+                  className="social-icon"
+                >
                   <img src={twitter} alt="twitter" />
                 </a>
               </div>
             </div>
 
-            <div className="map-box">
+            <a
+              href="https://www.google.com/maps/place/Seoul+Plaza/@41.3047163,69.2830958,17.01z/data=!4m5!3m4!1s0x0:0xe31095572f95deef!8m2!3d41.3052132!4d69.2831898"
+              className="map-box"
+              target="_blank"
+            >
               <img src={map} alt="" />
-            </div>
+            </a>
           </div>
         </form>
       </div>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import logo from "../images/logo-4x.png";
+import logo from "../images/milliard-new.svg";
 import MainLayout from "../layouts/main-layout";
 import Header from "../components/header";
 import Container from "../components/container";
@@ -41,7 +41,7 @@ const HomePage = () => {
             <Flex justifyContent={"space-between"} alignItems={"center"}>
               <Link to="/">
                 <div>
-                  <img className={"logo"} src={logo} alt="" />
+                  <img className={"logo"} src={logo} alt="milliard-club" />
                 </div>
               </Link>
               <Link to={"/contact"}>

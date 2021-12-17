@@ -17,7 +17,6 @@
     //@include absCenter;
     display: flex;
     flex-wrap: wrap;
-    animation: fromleft 1.5s linear;
 
     &__logo {
       @media (max-width: 576px) {

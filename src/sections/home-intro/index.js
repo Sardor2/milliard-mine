@@ -22,8 +22,10 @@ const HomeIntro = ({
   return (
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
       <Container className={"flex-center"}>
-        <div className={"intro-section__wrapper"}>
-          <div className="intro-section__wrapper__details">
+        <div
+          className={"intro-section__wrapper animate__animated animate__fadeIn"}
+        >
+          <div className="intro-section__wrapper__details animate__animated animate__slideInLefty">
             <h1>{title}</h1>
             <p>{description}</p>
             <Flex className={"footer"} alignItems={"center"}>
