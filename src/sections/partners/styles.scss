@@ -2,6 +2,7 @@
 
 #partners {
   padding: 15rem 0;
+  position: relative;
 
   h3 {
     background-image: $linear-gold;
@@ -13,26 +14,39 @@
   }
 
   .box {
-    //padding: 3.3rem 2.5rem;
     background-color: $color-white;
     width: 17.6rem;
     height: 9.6rem;
     color: $color-dark;
     border-radius: 1.6rem;
+    box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
 
     .image {
-      max-width: 60%;
+      width: 60%;
+    }
+  }
+
+  .swiper-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 3rem;
+    max-width: 80%;
+
+    @media (max-width: 576px) {
+      margin-top: 5rem;
     }
   }
 
   .swiper {
-    margin-top: 1.3rem;
+    // margin-top: 1.3rem;
     background-color: transparent;
-    &::before,
-    &::after {
-      content: "";
-      box-shadow: none;
-    }
+    // &::before,
+    // &::after {
+    //   content: "";
+    //   box-shadow: none;
+    // }
 
     .swiper-wrapper {
       padding: 5rem 2rem;
@@ -43,28 +57,55 @@
     }
     .swiper-slide {
       height: max-content;
-    }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: gray !important;
-      right: 0;
-      &:after {
-        font-size: 2.5rem !important;
+      @media (max-width: 700px) {
+        display: flex;
+        justify-content: center;
       }
     }
-    .swiper-button-prev {
-      left: 0;
+
+    // .swiper-button-next,
+    // .swiper-button-prev {
+    //   color: gray !important;
+    //   right: 0;
+    //   &:after {
+    //     font-size: 2.5rem !important;
+    //   }
+    // }
+    // .swiper-button-prev {
+    //   left: 0;
+    // }
+  }
+
+  .control-btn-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  .next-btn {
+    right: 0;
+    &:hover {
+      transform: translate(3px, -50%);
+    }
+  }
+
+  .prev-btn {
+    left: 0;
+    &:hover {
+      transform: translate(-3px, -50%);
     }
   }
 
   @media (max-width: 576px) {
     .mySwiper {
-      margin-top: 6rem;
+      // margin-top: 6rem;
     }
     .box {
       // width: 9rem;
-      height: 5rem;
+      // height: 5rem;
     }
 
     padding: 6rem 0;

@@ -154,50 +154,47 @@ section.club-members {
       pointer-events: none;
     }
   }
-}
 
-.swiper {
-  padding-top: 20px;
-  &-slide {
-    &-thumb {
-      &-active {
-        .each-member {
-          transform: translateY(-0.5rem);
-          z-index: 2;
+  .mySwiper {
+    position: relative;
+    &::after {
+      content: "";
+      box-shadow: 37px 0 120px 140px rgba(24, 25, 31, 0.7);
+      top: 0;
+      margin-left: -30px;
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      z-index: 1;
+    }
+    &::before {
+      content: "";
+      box-shadow: 37px 0 120px 140px rgba(24, 25, 31, 0.7);
+      top: 0;
+      right: 0;
+      margin-right: -30px;
+      position: absolute;
+      width: 30px;
+      height: 100%;
+      z-index: 2;
+    }
+  }
 
-        }
-        img {
-          filter: grayscale(0.3);
-          transition: 0.2s ease;
+  .swiper {
+    padding-top: 20px;
+    &-slide {
+      &-thumb {
+        &-active {
+          .each-member {
+            transform: translateY(-0.5rem);
+            z-index: 2;
+          }
+          img {
+            filter: grayscale(0.3);
+            transition: 0.2s ease;
+          }
         }
       }
     }
-  }
-}
-
-
-
-.mySwiper {
-  position: relative;
-  &::after {
-    content: "";
-    box-shadow: 37px 0 120px 140px rgba(24, 25, 31, 0.7);
-    top: 0;
-    margin-left: -30px;
-    position: absolute;
-    width: 30px;
-    height: 100%;
-    z-index: 1;
-  }
-  &::before {
-    content: "";
-    box-shadow: 37px 0 120px 140px rgba(24, 25, 31, 0.7);
-    top: 0;
-    right: 0;
-    margin-right: -30px;
-    position: absolute;
-    width: 30px;
-    height: 100%;
-    z-index: 2;
   }
 }
