@@ -59,10 +59,10 @@ const Contact = ({ renderAnimatedText = false }) => {
         />
       )}
       <div className="contact-box">
-        <h2>{t("leave_info_we_contact_you")}</h2>
+        <h2 className="animate__fade-in">{t("leave_info_we_contact_you")}</h2>
         <form
           onSubmit={handleSubmit}
-          className="flex justify-between flex-wrap mt-20"
+          className="flex justify-between flex-wrap mt-20 animate__fade-in"
         >
           <div className="flex flex-col inputs-wrapper sm:max-w-full sm:w-full  lg:w-7/12 lg:max-w-2xl">
             <h4>{t("leave_message")}</h4>

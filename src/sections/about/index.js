@@ -1,10 +1,6 @@
 import React from "react";
 import "./styles.scss";
 import Container from "../../components/container";
-import aboutImg1 from "../../images/about/about1.jpg";
-import aboutImg2 from "../../images/about/about2.jpg";
-import aboutImg3 from "../../images/about/about3.jpg";
-import aboutImg4 from "../../images/about/about4.jpg";
 
 const About = ({ images_url = [], description, info = [], title }) => {
   return (

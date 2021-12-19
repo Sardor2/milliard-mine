@@ -1,17 +1,12 @@
 import React from "react";
 import "./styles.scss";
-import Container from "../../components/container";
-import Flex from "../../components/flex";
 import BusinessCard from "../../components/business-card";
-import wallet from "../../images/wallet.svg";
-import swap from "../../images/swap.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "./styles.scss";
 
 import SwiperCore, { Navigation, Pagination } from "swiper";
 
-import "swiper/scss/pagination";
 import { useTranslation } from "react-i18next";
 import { Link } from "gatsby";
 

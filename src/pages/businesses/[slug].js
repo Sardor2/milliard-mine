@@ -1,17 +1,14 @@
 import React from "react";
 import MainLayout from "../../layouts/main-layout";
-import logo from "../../images/logo-4x.png";
+import logo from "../../images/milliard-new.svg";
 import Header from "../../components/header";
 import BusinessCard from "../../components/business-card";
 import swap from "../../images/swap.svg";
 import "./styles.scss";
 import Contact from "../../sections/contact";
-import { BUSINESSES } from "../../constants";
 import { useTranslation } from "react-i18next";
-import Spinner from "../../components/spinner";
 import PageSpinner from "../../components/page-spinner";
 import { useBusinesses } from "../../services/use-businesses";
-import { Redirect } from "@reach/router";
 import { Link } from "gatsby";
 import AnimText from "../../components/animText";
 

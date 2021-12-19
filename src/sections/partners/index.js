@@ -5,10 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import SwiperCore, { Navigation, Autoplay } from "swiper";
 
-import "swiper/scss";
-import "swiper/scss/navigation";
 import { useTranslation } from "react-i18next";
-import { PARTNERS } from "../../constants";
 import PrevArrow from "../../components/icons/prev-arrow";
 import NextArrow from "../../components/icons/next-arrow";
 
@@ -34,8 +31,7 @@ const Partners = ({ partners }) => {
   return (
     <section id="partners" className="partners">
       <h2 className="text-center">{t("partners")}</h2>
-      <h3>We have been working with some Fortune 500 clients</h3>
-      {/*<div className="cards mt-20 flex justify-center"></div>*/}
+      <h3>{t("partners_description")}</h3>
       <div className="swiper-container">
         <div onClick={handlePrev} className="control-btn-arrow  prev-btn">
           <PrevArrow />

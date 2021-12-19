@@ -49,7 +49,7 @@ const ClubMember = ({ img, name, description, website, socials }) => {
             <div className="social-links flex mt-10">
               {socials?.map((social) => (
                 <a className="mr-7" href={social.value} target="_blank">
-                  <img src={socialsIcons[social.name]} alt="facebook" />
+                  <img src={socialsIcons[social.name]} alt={social.name} />
                 </a>
               ))}
               {/*<a className="mr-7" href="#facebook">*/}
