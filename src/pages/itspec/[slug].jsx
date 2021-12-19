@@ -3,7 +3,7 @@ import React from "react";
 import Button from "../../components/button";
 import Container from "../../components/container";
 import Header from "../../components/header";
-import logo from "../../images/logo-4x.png";
+import logo from "../../images/milliard-new.svg";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
@@ -22,15 +22,13 @@ import useHomePageData from "../../services/use-home-page-data";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import "swiper/scss/pagination";
+
 import MainLayout from "../../layouts/main-layout";
 import useBusinessDetail from "../../services/use-business-detail";
 import PageSpinner from "../../components/page-spinner";
 SwiperCore.use([Navigation, Pagination]);
 
 const ItSpec = ({ params }) => {
-  const { data } = useHomePageData();
-
   const { data: detail, loading } = useBusinessDetail(params.slug);
 
   return (

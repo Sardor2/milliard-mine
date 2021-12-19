@@ -1,43 +1,16 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/thumbs";
 import "./styles.scss";
-import SwiperCore, { Navigation, FreeMode, Thumbs, Pagination } from "swiper";
+import SwiperCore, { Navigation, Thumbs, EffectFade, Keyboard } from "swiper";
 import Container from "../../components/container";
-// import Button from "../../components/button";
-// import facebook from "../../images/icons/Facebook.svg";
-// import instagram from "../../images/icons/Instagram.svg";
-// import twitter from "../../images/icons/Twitter.svg";
-// import youtube from "../../images/icons/Youtube.png";
 import clubMember from "../../images/club-members/club-member-1.png";
-// import bottomMember from "../../images/club-members/club-member-bottom-1.png";
 import circlesSvg from "../../images/circles.svg";
-// import arrow from "../../images/arrow-right.svg";
-// import ContactMemberForm from "../../components/contact-member-form";
-// import Modal from "../../components/modal";
-import { useModal } from "../../hooks";
 import ClubMember from "./club-member";
 import AnimText from "../../components/animText";
 import { useTranslation } from "react-i18next";
 
-const singleMember = {
-  description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
-  img: clubMember,
-  name: "Entreprenuer-",
-};
-
-// const MEMBERS = Array(20)
-//   .fill(singleMember)
-//   .map((item, index) => ({
-//     ...item,
-//     name: item.name + index,
-//     description: item.description + index,
-//   }));
-
-SwiperCore.use([Navigation, Thumbs]);
+SwiperCore.use([Navigation, Thumbs, EffectFade, Keyboard]);
 
 const ClubMembers = ({ members }) => {
   const [currentMember, setCurrentMember] = React.useState(null);
@@ -58,6 +31,13 @@ const ClubMembers = ({ members }) => {
           thumbs={{ swiper: currentMember }}
           className="mySwiper2"
           speed={700}
+          effect={"fade"}
+          keyboard={{
+            enabled: true,
+          }}
+          fadeEffect={{
+            crossFade: true,
+          }}
         >
           {members &&
             members?.map((member) => (

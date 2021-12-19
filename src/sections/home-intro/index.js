@@ -1,29 +1,19 @@
 import React from "react";
 import "./styles.scss";
-// import logo from "../../images/banner_logo.png";
 import play from "../../images/play.svg";
 import Container from "../../components/container";
 import Flex from "../../components/flex";
-import ContactMemberForm from "../../components/contact-member-form";
 import Modal from "../../components/modal";
 import { useModal } from "../../hooks";
-// import { useMembers } from "../../services/use-members";
-// import Spinner from "../../components/spinner";
-// import { useMain } from "../../services/use-main";
 
-const HomeIntro = ({
-  description = "",
-  iframe = "",
-  logo = "",
-  logo_url = "",
-  title = "",
-}) => {
+const HomeIntro = ({ description = "", logo_url = "", title = "" }) => {
   const { open, onClose, onOpen } = useModal();
+
   return (
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
       <Container className={"flex-center"}>
-        <div className={"intro-section__wrapper"}>
-          <div className="intro-section__wrapper__details">
+        <div className={"intro-section__wrapper animate__fade-in"}>
+          <div className="intro-section__wrapper__details animate__animated animate__slideInLeft">
             <h1>{title}</h1>
             <p>{description}</p>
             <Flex className={"footer"} alignItems={"center"}>
@@ -42,11 +32,12 @@ const HomeIntro = ({
                   height="400"
                   src={"https://www.youtube.com/embed/vY09Lo4wRY8"}
                   allowFullScreen
+                  className="home-intro-video-player"
                 />
               </Modal>
             </Flex>
           </div>
-          <div>
+          <div className=" animate__animated animate__slideInRight ">
             <img className={"logo"} src={logo_url} alt="logo-milliard" />
           </div>
         </div>

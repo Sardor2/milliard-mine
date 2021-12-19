@@ -1,3 +1,4 @@
+@import "../../styles//variables.scss";
 .about {
   padding: 12rem 0 10rem;
   &Img {
@@ -23,6 +24,41 @@
     }
     &-item {
       flex: 0 0 calc(50% - 10px);
+      position: relative;
+      img {
+        transition: all 0.3s ease;
+      }
+
+      @media (min-width: 1200px) {
+        &:hover {
+          img {
+            position: relative;
+            transform: scale(1.5);
+            // outline: 5px solid #e1b16e;
+            // outline-offset: 10px;
+            border-image: $linear-gold;
+            padding: 4px;
+            border-width: 5px;
+            border-style: solid;
+            border-image-slice: 1;
+            z-index: 2;
+            height: max-content;
+          }
+
+          // &:before {
+          //   content: "";
+          //   position: absolute;
+          //   top: 0;
+          //   right: 0;
+          //   bottom: 0;
+          //   left: 0;
+          //   z-index: -1;
+          //   margin: -5px;
+          //   border-radius: inherit;
+          //   background: $linear-gold;
+          // }
+        }
+      }
     }
   }
 
@@ -73,6 +109,7 @@
     }
     &-title {
       font-size: 1.6rem;
+      text-transform: capitalize;
       background: linear-gradient(
         90deg,
         #7a7a7a 0%,

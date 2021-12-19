@@ -1,11 +1,7 @@
 import React from "react";
 import "./gallery-styles.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/scss";
 import "swiper/scss/effect-coverflow";
-import "swiper/scss/pagination";
-import "swiper/scss/navigation";
 
 import SwiperCore, { Navigation, EffectCoverflow } from "swiper";
 import cross from "../../images/icons/cross.svg";

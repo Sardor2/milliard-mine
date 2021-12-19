@@ -1,5 +1,5 @@
 import * as React from "react";
-import logo from "../images/logo-4x.png";
+import logo from "../images/milliard-new.svg";
 import MainLayout from "../layouts/main-layout";
 import Header from "../components/header";
 import Container from "../components/container";
@@ -20,11 +20,10 @@ import { useTranslation } from "react-i18next";
 import Statistics from "../sections/statistics";
 import Modal from "../components/modal";
 import LanguageBanner from "../components/language-banner";
-import { useModal } from "../hooks";
-import { getLang } from "../utils";
+import { useHomeContext } from "../context/home-provider";
 
 const HomePage = () => {
-  const { loading, data } = useHomePageData();
+  const data = useHomeContext();
   const { t } = useTranslation();
 
   const shouldRenderLanguageBanner = React.useMemo(() => {
@@ -34,35 +33,33 @@ const HomePage = () => {
   }, []);
 
   return (
-    <PageSpinner loading={loading}>
-      <MainLayout>
-        <Header>
-          <Container>
-            <Flex justifyContent={"space-between"} alignItems={"center"}>
-              <Link to="/">
-                <div>
-                  <img className={"logo"} src={logo} alt="" />
-                </div>
-              </Link>
-              <Link to={"/contact"}>
-                <Button variant={"outlined"}>{t("contact")}</Button>
-              </Link>
-            </Flex>
-          </Container>
-        </Header>
-        <HomeIntro {...data?.main} />
-        <About {...data?.about} />
-        <BusinessTypes businessTypes={data?.businessTypes} />
-        <ClubMembers members={data?.members} />
-        <Projects projects={data?.images} />
-        <Partners partners={data?.partners} />
-        <Statistics tags={data?.tags} />
-        <Contact />
-        <Modal open={shouldRenderLanguageBanner}>
-          <LanguageBanner />
-        </Modal>
-      </MainLayout>
-    </PageSpinner>
+    <MainLayout>
+      <Header>
+        <Container>
+          <Flex justifyContent={"space-between"} alignItems={"center"}>
+            <Link to="/">
+              <div>
+                <img className={"logo"} src={logo} alt="milliard-club" />
+              </div>
+            </Link>
+            <Link to={"/contact"}>
+              <Button variant={"outlined"}>{t("contact")}</Button>
+            </Link>
+          </Flex>
+        </Container>
+      </Header>
+      <HomeIntro {...data?.main} />
+      <About {...data?.about} />
+      <BusinessTypes businessTypes={data?.businessTypes} />
+      <ClubMembers members={data?.members} />
+      <Projects projects={data?.images} />
+      <Partners partners={data?.partners} />
+      <Statistics tags={data?.tags} />
+      <Contact />
+      <Modal open={shouldRenderLanguageBanner}>
+        <LanguageBanner />
+      </Modal>
+    </MainLayout>
   );
 };
 

@@ -46,7 +46,7 @@ const Projects = () => {
                   setCurrentSlide(index);
                 }}
                 key={index}
-                className="project-card"
+                className="project-card animate__animated animate__zoomIn"
               >
                 <div className="teaser">
                   <h3 className="title">{project.title}</h3>
@@ -64,8 +64,26 @@ const Projects = () => {
               </div>
             ))}
           </div>
+          {hasMore && (
+            <Button
+              loading={isLoadingNextPage}
+              onClick={fetchMore}
+              className={"load-more-btn"}
+              variant="filled"
+            >
+              {t("load_more")}
+            </Button>
+          )}
+        </Spinner>
+      </Container>
+    </section>
+  );
+};
 
-          {!isLoadingNextPage ? (
+export default Projects;
+
+{
+  /* {!isLoadingNextPage ? (
             hasMore && (
               <Button onClick={fetchMore} className={"load-more-btn"}>
                 {t("load_more")}
@@ -75,11 +93,5 @@ const Projects = () => {
             <div className={"load-more-btn"}>
               <Spinner loading={true} loaderSize={80} height={100} />
             </div>
-          )}
-        </Spinner>
-      </Container>
-    </section>
-  );
-};
-
-export default Projects;
+          )} */
+}
