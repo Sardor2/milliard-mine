@@ -20,6 +20,7 @@ const BusinessTypes = ({ businessTypes }) => {
       <h2>{t("business_types")}</h2>
       <Swiper
         navigation={true}
+        loop
         pagination={{
           type: "progressbar",
         }}

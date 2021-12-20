@@ -64,7 +64,7 @@ const Partners = ({ partners }) => {
               },
               968: {
                 slidesPerView: 5,
-                spaceBetween: 24,
+                spaceBetween: 0,
               },
             }}
           >
