@@ -100,9 +100,7 @@ const Contact = ({ renderAnimatedText = false }) => {
           </div>
           <div className="flex flex-col pt-16 lg:w-5/12  lg:ml-10">
             <div className="address-box flex flex-col lg:pl-8">
-              <address>
-                Toshkent shahar, Shahrisabz ko'chasi 5a, Seul Plaza 9-qavat
-              </address>
+              <address>{t("address")}</address>
               <a className="phone" href="tel:+998555002220">
                 +998 (55) 500-22-20
               </a>
