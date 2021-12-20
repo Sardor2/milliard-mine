@@ -120,7 +120,7 @@ const Statistics = ({ tags = [] }) => {
           </div>
         </div>
       </Container>
-      <div className="max-w-full overflow-x-scroll">
+      <div className="max-w-full overflow-x-auto">
         <div className="bottom-line-graph">
           <div className="grid-lines">
             <div className="line"></div>
