@@ -16,7 +16,7 @@ const About = ({ images_url = [], description, info = [], title }) => {
                 <img src={images_url[1]} alt="" />
               </div>
             </div>
-            <div className="aboutImg-bottom  flex flex-wrap">
+            <div className="aboutImg-bottom  flex sm:flex-wrap">
               <div className="aboutImg-item">
                 <img src={images_url[2]} alt="" />
               </div>

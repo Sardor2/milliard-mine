@@ -9,10 +9,7 @@ const useSubmitFeedback = ({ onSuccess } = { onSuccess() {} }) => {
     setLoading(true);
     let res;
     try {
-      res = await api("feedback", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
+      res = await api.post("feedback", data);
       onSuccess(res);
     } catch (e) {
       setError(e);

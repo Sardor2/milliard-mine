@@ -21,6 +21,7 @@ import Statistics from "../sections/statistics";
 import Modal from "../components/modal";
 import LanguageBanner from "../components/language-banner";
 import { useHomeContext } from "../context/home-provider";
+import StickyContact from "../components/sticky-contact";
 
 const HomePage = () => {
   const data = useHomeContext();
@@ -34,6 +35,7 @@ const HomePage = () => {
 
   return (
     <MainLayout>
+      <StickyContact />
       <Header>
         <Container>
           <Flex justifyContent={"space-between"} alignItems={"center"}>
