@@ -43,28 +43,17 @@ const ClubMember = ({ img, name, description, website, socials }) => {
               target="_blank"
               className="website-link    font-poppins"
             >
-              {t("go_to_website")}
+              {t("more_info")}
             </a>
 
-            <div className="social-links flex mt-10">
+            {/* <div className="social-links flex mt-10">
               {socials?.map((social) => (
                 <a className="mr-7" href={social.value} target="_blank">
                   <img src={socialsIcons[social.name]} alt={social.name} />
                 </a>
               ))}
-              {/*<a className="mr-7" href="#facebook">*/}
-              {/*  <img src={facebook} alt="facebook" />*/}
-              {/*</a>*/}
-              {/*<a className="mr-7" href="#instagram">*/}
-              {/*  <img src={instagram} alt="instagram" />*/}
-              {/*</a>*/}
-              {/*<a className="mr-7" href="#twitter">*/}
-              {/*  <img src={twitter} alt="twitter" />*/}
-              {/*</a>*/}
-              {/*<a className="mr-7" href="#youtube">*/}
-              {/*  <img src={youtube} alt="yotube" />*/}
-              {/*</a>*/}
-            </div>
+           
+            </div> */}
           </div>
         </div>
       </div>

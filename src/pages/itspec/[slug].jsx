@@ -7,14 +7,13 @@ import logo from "../../images/milliard-new.svg";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
-import youtube from "../../images/icons/Youtube.png";
+import youtube from "../../images/icons/Youtube.svg";
 import infospec from "../../images/itspec/info-spec.png";
 import teamImg1 from "../../images/team/team1.png";
 import teamImg2 from "../../images/team/team2.png";
 import teamImg3 from "../../images/team/team3.png";
 import portfolio1 from "../../images/portfolio/1.png";
 import portfolio2 from "../../images/portfolio/2.png";
-import partnerImg from "../../images/itspec partners/1.png";
 import "./itspec.scss";
 import AnimText from "../../components/animText";
 import About from "../../sections/about";
@@ -26,10 +25,13 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 import MainLayout from "../../layouts/main-layout";
 import useBusinessDetail from "../../services/use-business-detail";
 import PageSpinner from "../../components/page-spinner";
+import { useTranslation } from "react-i18next";
 SwiperCore.use([Navigation, Pagination]);
 
 const ItSpec = ({ params }) => {
   const { data: detail, loading } = useBusinessDetail(params.slug);
+  const { data } = useHomePageData();
+  const { t } = useTranslation();
 
   return (
     <PageSpinner loading={loading}>
@@ -78,7 +80,7 @@ const ItSpec = ({ params }) => {
                       </Button>
                     </Link>
                     <a target="_blank" href={detail?.website}>
-                      Go to the web-site
+                      {t("more_info")}
                     </a>
                   </div>
                   <div className="social">
@@ -210,9 +212,9 @@ const ItSpec = ({ params }) => {
                       will be information about the project Here will be
                       information about the project
                     </p>
-                    <Link to={"/contact"}>
+                    {/* <Link to={"/contact"}>
                       <Button variant={"outlined"}>Visit web site</Button>
-                    </Link>
+                    </Link> */}
                   </div>
                 </SwiperSlide>
                 <SwiperSlide className="flex md:flex-row flex-col">
@@ -256,7 +258,7 @@ const ItSpec = ({ params }) => {
                       about the project Here will be information about the
                       project Here will be information about the project Here
                       will be information about the project Here will be
-                      information about the project
+                      information about the projectd
                     </p>
                     <Link to={"/contact"}>
                       <Button variant={"outlined"}>Visit web site</Button>
@@ -268,10 +270,18 @@ const ItSpec = ({ params }) => {
           </section>
           <section className="partner">
             <Container className="text-center">
-              <h3 className="partner-title">Our Partners</h3>
-              <p>We have been working with some Fortune 500 clients</p>
+              <h3 className="partner-title">{t("our_partners")}</h3>
+              <p>{t("partners_description")}</p>
               <div className="partnerList">
-                <div className="partnerItem">
+                {data?.partners?.map((item) => (
+                  <a href={item.url} target="_blank" className="partnerItem">
+                    <div className="partnerImg">
+                      <img src={item.logo_url} alt={item.name} />
+                    </div>
+                    <div>{item.name}</div>
+                  </a>
+                ))}
+                {/* <div className="partnerItem">
                   <div className="partnerImg">
                     <img src={partnerImg} alt="" />
                   </div>
@@ -300,10 +310,10 @@ const ItSpec = ({ params }) => {
                     <img src={partnerImg} alt="" />
                   </div>
                   <div>Shopify</div>
-                </div>
+                </div> */}
               </div>
               <Link to={"/contact"}>
-                <Button variant={"outlined"}>Become one</Button>
+                <Button variant={"outlined"}>{t("become_one")}</Button>
               </Link>
             </Container>
           </section>

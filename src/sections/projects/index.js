@@ -9,6 +9,7 @@ import Modal from "../../components/modal";
 import { useModal } from "../../hooks";
 import useProjects from "../../services/use-projects";
 import Spinner from "../../components/spinner";
+// import ProgressIndicator from "./progress-indicator";
 
 const breakpointColumnsObj = {
   default: 3,
@@ -21,8 +22,10 @@ const Projects = () => {
   const { open, onOpen, onClose } = useModal();
   const [currentSlide, setCurrentSlide] = React.useState();
 
-  const { projects, loading, isLoadingNextPage, fetchMore, hasMore } =
+  const { projects, loading, isLoadingNextPage, total, fetchMore, hasMore } =
     useProjects();
+
+  const progress = (projects?.length / total) * 100;
 
   const { t } = useTranslation();
   return (
@@ -34,6 +37,8 @@ const Projects = () => {
           projects={projects}
         />
       </Modal>
+
+      {/* <ProgressIndicator progress={progress} /> */}
 
       <Container maxWidth="lg">
         <Spinner loading={loading}>

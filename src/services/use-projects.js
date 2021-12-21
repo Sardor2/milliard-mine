@@ -39,6 +39,7 @@ const useProjects = () => {
     projects: projects.data,
     hasMore: page < projects?.links?.last_page,
     fetchMore,
+    total: projects?.links?.total,
     isLoadingNextPage,
   };
 };

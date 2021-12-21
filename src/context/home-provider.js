@@ -7,6 +7,7 @@ const homePageCtx = React.createContext({});
 const HomePageProvider = ({ children }) => {
   const { loading, data } = useHomePageData();
 
+
   return (
     <homePageCtx.Provider value={data}>
       <PageSpinner loading={loading}>{children}</PageSpinner>

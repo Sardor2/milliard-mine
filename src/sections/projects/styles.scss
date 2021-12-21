@@ -1,5 +1,6 @@
 section.projects-section {
   padding: 10rem 0;
+  position: relative;
 
   h2 {
     margin-bottom: 8rem;
@@ -190,6 +191,31 @@ section.projects-section {
     margin: 10rem auto 0;
     display: block;
     border-radius: 0;
+  }
+
+  .progress-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 150px;
+    height: 450px;
+    width: 5px;
+    background-color: #3c3939;
+
+    .progress-thumb {
+      background-color: white;
+
+      transition: height 0.3s linear;
+    }
+
+    @media (max-width: 1430px) {
+      bottom: -20rem;
+      transform: translate(-50%, 0) rotate(-90deg);
+      left: 50%;
+      right: unset;
+      top: unset;
+      z-index: 20;
+    }
   }
 
   @media (max-width: 576px) {
