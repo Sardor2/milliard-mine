@@ -33,11 +33,11 @@ const Partners = ({ partners }) => {
       <h2 className="text-center">{t("partners")}</h2>
       <h3>{t("partners_description")}</h3>
       <div className="swiper-container">
-        <div onClick={handlePrev} className="control-btn-arrow  prev-btn">
+        <div onClick={handlePrev} className={`control-btn-arrow  prev-btn `}>
           <PrevArrow />
         </div>
 
-        <div onClick={handleNext} className="control-btn-arrow next-btn">
+        <div onClick={handleNext} className={`control-btn-arrow next-btn`}>
           <NextArrow />
         </div>
 
@@ -54,15 +54,24 @@ const Partners = ({ partners }) => {
             }}
             className="mySwiper"
             breakpoints={{
-              320: {
+              400: {
                 slidesPerView: 1,
                 spaceBetween: 2,
               },
-              640: {
-                slidesPerView: 3,
-                spaceBetween: 10,
+              576: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                // width: 170,
               },
-              968: {
+              700: {
+                slidesPerView: 3,
+                spaceBetween: 0,
+              },
+              937: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+              },
+              1200: {
                 slidesPerView: 5,
                 spaceBetween: 0,
               },
