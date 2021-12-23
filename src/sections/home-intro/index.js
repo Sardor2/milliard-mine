@@ -13,7 +13,7 @@ const HomeIntro = ({ description = "", logo_url = "", title = "" }) => {
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
       <Container className={"flex-center"}>
         <div className={"intro-section__wrapper animate__fade-in"}>
-          <div className="intro-section__wrapper__details animate__animated animate__slideInLeft">
+          <div className="intro-section__wrapper__details animate__animated animate__fadeIn">
             <h1>{title}</h1>
             <p>{description}</p>
             <Flex className={"footer"} alignItems={"center"}>
@@ -37,7 +37,7 @@ const HomeIntro = ({ description = "", logo_url = "", title = "" }) => {
               </Modal>
             </Flex>
           </div>
-          <div className=" animate__animated animate__slideInRight ">
+          <div className=" animate__animated animate__fadeIn ">
             <img className={"logo"} src={logo_url} alt="logo-milliard" />
           </div>
         </div>

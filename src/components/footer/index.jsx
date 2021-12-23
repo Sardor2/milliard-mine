@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./styles.scss";
-import logo from "../../images/logo-4x.png";
+import logo from "../../images/milliard-new.svg";
 import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";

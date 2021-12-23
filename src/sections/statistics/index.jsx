@@ -85,7 +85,7 @@ const Statistics = ({ tags = [] }) => {
       <Container>
         <div className="top">
           <div className="teaser">
-            <h2>Biz qaysi sohalarda faoliyat yuritamiz</h2>
+              <h2>{t("statistics_title")}</h2>
 
             <div className="tags">
               {tags?.map((item, index) => (
