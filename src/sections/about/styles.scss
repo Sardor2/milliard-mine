@@ -7,6 +7,18 @@
     &-top {
       gap: 20px;
       align-items: flex-end;
+
+      // .aboutImg-item {
+      //   &:nth-of-type(1) img {
+      //     max-width: 250px;
+      //     max-height: 334px;
+      //   }
+
+      //   &:nth-of-type(2) img {
+      //     max-width: 270px;
+      //     max-height: 270px;
+      //   }
+      // }
     }
     &-bottom {
       gap: 20px;
@@ -21,42 +33,59 @@
           flex: 50%;
         }
       }
+
+      // .aboutImg-item {
+      //   &:nth-of-type(1) img {
+      //     max-width: 264px;
+      //     max-height: 285px;
+      //   }
+
+      //   &:nth-of-type(2) img {
+      //     max-width: 356px;
+      //     max-height: 356px;
+      //   }
+      // }
     }
     &-item {
       flex: 0 0 calc(50% - 10px);
       position: relative;
+      max-width: 356px;
+
       img {
         transition: all 0.3s ease;
+        object-fit: contain;
       }
 
-      @media (min-width: 1200px) {
-        &:hover {
-          img {
-            position: relative;
-            transform: scale(1.5);
-            // outline: 5px solid #e1b16e;
-            // outline-offset: 10px;
-            border-image: $linear-gold;
-            padding: 4px;
-            border-width: 5px;
-            border-style: solid;
-            border-image-slice: 1;
-            z-index: 2;
-            height: max-content;
-          }
+      &.animated {
+        @media (min-width: 1200px) {
+          &:hover {
+            img {
+              position: relative;
+              transform: scale(1.5);
+              // outline: 5px solid #e1b16e;
+              // outline-offset: 10px;
+              border-image: $linear-gold;
+              padding: 4px;
+              border-width: 5px;
+              border-style: solid;
+              border-image-slice: 1;
+              z-index: 2;
+              height: max-content;
+            }
 
-          // &:before {
-          //   content: "";
-          //   position: absolute;
-          //   top: 0;
-          //   right: 0;
-          //   bottom: 0;
-          //   left: 0;
-          //   z-index: -1;
-          //   margin: -5px;
-          //   border-radius: inherit;
-          //   background: $linear-gold;
-          // }
+            // &:before {
+            //   content: "";
+            //   position: absolute;
+            //   top: 0;
+            //   right: 0;
+            //   bottom: 0;
+            //   left: 0;
+            //   z-index: -1;
+            //   margin: -5px;
+            //   border-radius: inherit;
+            //   background: $linear-gold;
+            // }
+          }
         }
       }
     }

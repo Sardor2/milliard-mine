@@ -22,6 +22,7 @@ import Modal from "../components/modal";
 import LanguageBanner from "../components/language-banner";
 import { useHomeContext } from "../context/home-provider";
 import StickyContact from "../components/sticky-contact";
+import Helmet from "react-helmet";
 
 const HomePage = () => {
   const data = useHomeContext();
@@ -34,34 +35,39 @@ const HomePage = () => {
   }, []);
 
   return (
-    <MainLayout>
-      <StickyContact />
-      <Header>
-        <Container>
-          <Flex justifyContent={"space-between"} alignItems={"center"}>
-            <Link to="/">
-              <div>
-                <img className={"logo"} src={logo} alt="milliard-club" />
-              </div>
-            </Link>
-            <Link to={"/contact"}>
-              <Button variant={"outlined"}>{t("contact")}</Button>
-            </Link>
-          </Flex>
-        </Container>
-      </Header>
-      <HomeIntro {...data?.main} />
-      <About {...data?.about} />
-      <BusinessTypes businessTypes={data?.businessTypes} />
-      <ClubMembers members={data?.members} />
-      <Projects projects={data?.images} />
-      <Partners partners={data?.partners} />
-      <Statistics tags={data?.tags} />
-      <Contact />
-      <Modal open={shouldRenderLanguageBanner}>
-        <LanguageBanner />
-      </Modal>
-    </MainLayout>
+    <>
+      <Helmet>
+        <title>Milliard</title>
+      </Helmet>
+      <MainLayout>
+        <StickyContact />
+        <Header>
+          <Container>
+            <Flex justifyContent={"space-between"} alignItems={"center"}>
+              <Link to="/">
+                <div>
+                  <img className={"logo"} src={logo} alt="milliard-club" />
+                </div>
+              </Link>
+              <Link to={"/contact"}>
+                <Button variant={"outlined"}>{t("contact")}</Button>
+              </Link>
+            </Flex>
+          </Container>
+        </Header>
+        <HomeIntro {...data?.main} />
+        <About animated {...data?.about} />
+        <BusinessTypes businessTypes={data?.businessTypes} />
+        <ClubMembers members={data?.members} />
+        <Projects projects={data?.images} />
+        <Partners partners={data?.partners} />
+        <Statistics tags={data?.tags} />
+        <Contact />
+        <Modal open={shouldRenderLanguageBanner}>
+          <LanguageBanner />
+        </Modal>
+      </MainLayout>
+    </>
   );
 };
 

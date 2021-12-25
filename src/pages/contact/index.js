@@ -9,28 +9,34 @@ import Flex from "../../components/flex";
 import "./styles.scss";
 import Contact from "../../sections/contact";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 const ContactPage = () => {
   const { t } = useTranslation();
   return (
-    <MainLayout>
-      <Header>
-        <Container maxWidth="lg">
-          <Flex justifyContent={"space-between"} alignItems={"center"}>
-            <Link to="/">
-              <img className="logo" src={logo} alt="" />
-            </Link>
-            <Link to="/">
-              <Button variant={"outlined"}>{t("home")}</Button>
-            </Link>
-          </Flex>
-        </Container>
-      </Header>
+    <>
+      <Helmet>
+        <title>Milliard | Contact</title>
+      </Helmet>
+      <MainLayout>
+        <Header>
+          <Container maxWidth="lg">
+            <Flex justifyContent={"space-between"} alignItems={"center"}>
+              <Link to="/">
+                <img className="logo" src={logo} alt="" />
+              </Link>
+              <Link to="/">
+                <Button variant={"outlined"}>{t("home")}</Button>
+              </Link>
+            </Flex>
+          </Container>
+        </Header>
 
-      <div className="mt-20">
-        <Contact renderAnimatedText />
-      </div>
-    </MainLayout>
+        <div className="mt-20">
+          <Contact renderAnimatedText />
+        </div>
+      </MainLayout>
+    </>
   );
 };
 

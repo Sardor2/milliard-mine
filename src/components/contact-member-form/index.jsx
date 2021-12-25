@@ -6,19 +6,23 @@ import cross from "../../images/icons/cross.svg";
 import useSubmitFeedback from "../../services/use-submit-feedback";
 import { useTranslation } from "react-i18next";
 
-const ContactMemberForm = ({ onExitClick = () => null }) => {
-  const { mutate, loading } = useSubmitFeedback({
-    onSuccess(res) {
-      console.log(res);
-    },
-  });
-
+const ContactMemberForm = ({ onExitClick = () => null, memberId }) => {
   const { t } = useTranslation();
 
   const [formValues, setFormValues] = useState({
     email: "",
     fullName: "",
     message: "",
+  });
+
+  const { mutate, loading } = useSubmitFeedback({
+    onSuccess(res) {
+      setFormValues({
+        email: "",
+        fullName: "",
+        message: "",
+      });
+    },
   });
 
   const handleChange = (e) => {
@@ -30,12 +34,12 @@ const ContactMemberForm = ({ onExitClick = () => null }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // message: formValues.message,
 
     mutate({
-      type: "feedback",
+      type: "member",
       full_name: formValues.fullName,
       email: formValues.email,
+      member_id: memberId,
     });
   };
 
@@ -53,6 +57,7 @@ const ContactMemberForm = ({ onExitClick = () => null }) => {
             onChange={handleChange}
             label="Name"
             name="fullName"
+            required
           />
         </div>
 
@@ -62,6 +67,8 @@ const ContactMemberForm = ({ onExitClick = () => null }) => {
             onChange={handleChange}
             label="Email"
             name="email"
+            type="email"
+            required
           />
         </div>
 

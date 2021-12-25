@@ -1,17 +1,19 @@
 .sticky-contact-btn {
   position: fixed;
   top: 300px;
+  display: block;
   right: -80px;
   // padding: 15px 100px;
   width: 200px;
   height: 30px;
+  padding-top: 5px;
 
   background-color: white;
   color: #2c2c2c;
   text-align: center;
   letter-spacing: 0.25em;
   transform: rotate(-90deg);
-  z-index: 20;
+  z-index: 15;
   transition: all 0.3s ease;
 
   &:hover {

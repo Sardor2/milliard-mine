@@ -10,12 +10,12 @@ const StickyContact = () => {
   const { t } = useTranslation();
   return (
     <>
-      <button className="sticky-contact-btn" onClick={onOpen}>
+      <a className="sticky-contact-btn" href="#contact">
         {t("connect")}
-      </button>
-      <Modal onClose={onClose} open={open}>
+      </a>
+      {/* <Modal onClose={onClose} open={open}>
         <ContactMemberForm onExitClick={onClose} />
-      </Modal>
+      </Modal> */}
     </>
   );
 };

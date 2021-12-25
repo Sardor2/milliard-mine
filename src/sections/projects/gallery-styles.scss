@@ -1,12 +1,12 @@
-
 .images-gallery {
   position: relative;
+  z-index: 17;
   .close-btn {
     position: absolute;
     z-index: 10;
     top: 3rem;
     right: 3rem;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     img {
       width: 3rem;
@@ -18,9 +18,8 @@
     }
 
     &:active {
-      transform: rotate(90deg) scale(.9);
+      transform: rotate(90deg) scale(0.9);
     }
-
 
     @media (max-width: 576px) {
       right: 1rem;
@@ -41,7 +40,7 @@
         box-shadow: 10px 0 120px 50px rgb(24 25 31 / 70%);
       }
       &::after {
-        box-shadow: 10px 0 120px 50px rgb(24 25 31 / 70%);;
+        box-shadow: 10px 0 120px 50px rgb(24 25 31 / 70%);
       }
     }
   }
@@ -49,9 +48,8 @@
   .swiper-wrapper {
     display: flex;
     align-items: center;
-
   }
-  .swiper-slide   {
+  .swiper-slide {
     background-position: center;
     background-size: cover;
     display: flex;
@@ -68,11 +66,5 @@
       //  min-width: 200px;
       //}
     }
-
-
   }
-
-
 }
-
-
