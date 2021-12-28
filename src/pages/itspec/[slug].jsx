@@ -27,10 +27,14 @@ import { Helmet } from "react-helmet";
 import Modal from "../../components/modal";
 import ContactMemberForm from "../../components/contact-member-form";
 import { useModal } from "../../hooks";
+import { useHomeContext } from "../../context/home-provider";
 SwiperCore.use([Navigation, Pagination]);
 
 const ItSpec = ({ params }) => {
   const { data: detail, loading } = useBusinessDetail(params.slug);
+  const { partners } = useHomeContext();
+
+  console.log(partners);
 
   const { t } = useTranslation();
   const modal = useModal();
@@ -207,9 +211,9 @@ const ItSpec = ({ params }) => {
                 <h3 className="partner-title">{t("our_partners")}</h3>
                 <p>{t("partners_description")}</p>
                 <div className="partnerList">
-                  {detail?.partners?.map((item) => (
+                  {partners?.map((item) => (
                     <a
-                      key={item.id}
+                      key={item.logo_url}
                       href={item.url}
                       target="_blank"
                       className="partnerItem"

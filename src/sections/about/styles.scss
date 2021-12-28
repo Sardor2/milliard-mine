@@ -1,6 +1,11 @@
 @import "../../styles//variables.scss";
 .about {
   padding: 12rem 0 10rem;
+
+  &-wrap {
+    animation-delay: 0.5s;
+  }
+
   &Img {
     width: 50%;
     gap: 20px;

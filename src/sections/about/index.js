@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.scss";
 import Container from "../../components/container";
+import { useInView } from "react-intersection-observer";
 
 const About = ({
   images_url = [],
@@ -9,10 +10,21 @@ const About = ({
   title,
   animated = false,
 }) => {
+  const { ref, inView } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
+  console.log(inView);
   return (
     <section className={"about"} id={"about"}>
       <Container>
-        <div className="about-wrap flex gap-16">
+        <div
+          ref={ref}
+          className={`about-wrap flex gap-16 ${
+            inView ? "animate__animated animate__fadeIn" : ""
+          }`}
+        >
           <div className="aboutImg flex flex-col">
             <div className="aboutImg-top flex flex-wrap">
               <div className={`aboutImg-item ${animated ? "animated" : ""}`}>

@@ -9,6 +9,7 @@ import Modal from "../../components/modal";
 import { useModal } from "../../hooks";
 import useProjects from "../../services/use-projects";
 import Spinner from "../../components/spinner";
+import { useInView } from "react-intersection-observer";
 // import ProgressIndicator from "./progress-indicator";
 
 const breakpointColumnsObj = {
@@ -21,11 +22,13 @@ const breakpointColumnsObj = {
 const Projects = () => {
   const { open, onOpen, onClose } = useModal();
   const [currentSlide, setCurrentSlide] = React.useState();
+  const { inView, ref } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
 
   const { projects, loading, isLoadingNextPage, total, fetchMore, hasMore } =
     useProjects();
-
-  const progress = (projects?.length / total) * 100;
 
   const { t } = useTranslation();
   return (
@@ -43,15 +46,21 @@ const Projects = () => {
       <Container maxWidth="lg">
         <Spinner loading={loading}>
           <h2>{t("parts_from_meetings")}</h2>
-          <div className="my-masonry-grid">
+          <div
+            ref={ref}
+            className={`my-masonry-grid  ${
+              inView ? "animate__animated animate__fadeIn" : ""
+            }`}
+            style={{ animationDelay: 500 }}
+          >
             {projects?.map((project, index) => (
               <div
                 onClick={() => {
                   onOpen();
                   setCurrentSlide(index);
                 }}
-                key={index}
-                className="project-card animate__animated animate__zoomIn"
+                key={project.image_url}
+                className={`project-card animate__animated animate__zoomIn`}
               >
                 <div className="teaser">
                   <h3 className="title">{project.title}</h3>

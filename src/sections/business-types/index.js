@@ -9,14 +9,23 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 
 import { useTranslation } from "react-i18next";
 import { Link } from "gatsby";
+import { useInView } from "react-intersection-observer";
 
 SwiperCore.use([Navigation, Pagination]);
 
 const BusinessTypes = ({ businessTypes }) => {
-  console.log(businessTypes, "hello");
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
   const { t } = useTranslation();
   return (
-    <section className={"business-types"} id={"business-types"}>
+    <section
+      ref={ref}
+      className={` ${
+        inView ? "animate__animated animate__fadeIn" : ""
+      } business-types animation-delay `}
+      id={"business-types"}
+    >
       <h2>{t("business_types")}</h2>
       <Swiper
         navigation={true}
