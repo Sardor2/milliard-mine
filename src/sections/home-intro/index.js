@@ -9,6 +9,7 @@ import { useModal } from "../../hooks";
 const HomeIntro = ({ description = "", logo_url = "", title = "" }) => {
   const { open, onClose, onOpen } = useModal();
 
+
   return (
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
       <Container className={"flex-center"}>

@@ -21,8 +21,7 @@ const ClubMembers = ({ members }) => {
   return (
     <section id="club-members" className="club-members">
       <AnimText
-        title="CLub members - community - Give million - get billion - give million -
-          get billion"
+        title={t("club_members").concat(" ").repeat(7)}
       />
       <Container maxWidth={"md"}>
         <h2 className="text-left">{t("club_members")}</h2>

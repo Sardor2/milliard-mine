@@ -13,7 +13,7 @@ import { usePages } from "../../services/use-pages";
 import { getLang, setLang } from "../../utils";
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const handleLang = (e) => {
     setLang(e.target.value);
     if (typeof window !== `undefined`) {

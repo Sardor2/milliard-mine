@@ -17,13 +17,13 @@ const socialsIcons = {
   Youtube,
 };
 
-const ClubMember = ({ img, name, description, website, socials }) => {
+const ClubMember = ({ img, name, description, website, socials , id}) => {
   const modal = useModal();
   const { t } = useTranslation();
   return (
     <>
       <Modal {...modal}>
-        <ContactMemberForm onExitClick={modal.onClose} />
+        <ContactMemberForm memberId={id} onExitClick={modal.onClose} />
       </Modal>
       <div className="current-member">
         <div className="current-member-img">
@@ -38,22 +38,21 @@ const ClubMember = ({ img, name, description, website, socials }) => {
             <Button onClick={modal.onOpen} variant="filled">
               {t("contact")}
             </Button>
-            <a
-              href={website}
-              target="_blank"
-              className="website-link    font-poppins"
-            >
-              {t("more_info")}
-            </a>
+            {/*<a*/}
+            {/*  href={website}*/}
+            {/*  target="_blank"*/}
+            {/*  className="website-link    font-poppins"*/}
+            {/*>*/}
+            {/*  {t("more_info")}*/}
+            {/*</a>*/}
 
-            {/* <div className="social-links flex mt-10">
+             <div className="social-links flex mt-10">
               {socials?.map((social) => (
                 <a className="mr-7" href={social.value} target="_blank">
-                  <img src={socialsIcons[social.name]} alt={social.name} />
+                  <img src={socialsIcons[social.name]}  alt={social.name} />
                 </a>
               ))}
-           
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
