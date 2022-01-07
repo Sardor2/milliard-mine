@@ -11,14 +11,13 @@ import twitter from "../../images/icons/Twitter.svg";
 import useSubmitFeedback from "../../services/use-submit-feedback";
 import { useTranslation } from "react-i18next";
 import AnimText from "../../components/animText";
-import {navigate} from "gatsby";
+import { navigate } from "gatsby";
 
 const Contact = ({ renderAnimatedText = false }) => {
-
   const { loading, mutate } = useSubmitFeedback({
     onSuccess(res) {
       setFormValues({ email: "", fullName: "", message: "" });
-      navigate('/')
+      navigate("/");
     },
   });
 
@@ -141,13 +140,20 @@ const Contact = ({ renderAnimatedText = false }) => {
               </div>
             </div>
 
-            <a
-              href="https://www.google.com/maps/place/Seoul+Plaza/@41.3047163,69.2830958,17.01z/data=!4m5!3m4!1s0x0:0xe31095572f95deef!8m2!3d41.3052132!4d69.2831898"
-              className="map-box"
-              target="_blank"
-            >
-              <img src={map} alt="" />
-            </a>
+            {/*<a*/}
+            {/*  href="https://www.google.com/maps/place/Seoul+Plaza/@41.3047163,69.2830958,17.01z/data=!4m5!3m4!1s0x0:0xe31095572f95deef!8m2!3d41.3052132!4d69.2831898"*/}
+            {/*  className="map-box"*/}
+            {/*  target="_blank"*/}
+            {/*>*/}
+            {/*  <img src={map} alt="" />*/}
+            {/*</a>*/}
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5994.320568192033!2d69.281424!3d41.3053766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe31095572f95deef!2sSeoul%20Plaza!5e0!3m2!1sen!2s!4v1641562830939!5m2!1sen!2s"
+              allowFullScreen
+              loading="lazy"
+              className={"map-box"}
+            ></iframe>
           </div>
         </form>
       </div>
