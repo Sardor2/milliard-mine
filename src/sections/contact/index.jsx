@@ -11,11 +11,14 @@ import twitter from "../../images/icons/Twitter.svg";
 import useSubmitFeedback from "../../services/use-submit-feedback";
 import { useTranslation } from "react-i18next";
 import AnimText from "../../components/animText";
+import {navigate} from "gatsby";
 
 const Contact = ({ renderAnimatedText = false }) => {
+
   const { loading, mutate } = useSubmitFeedback({
     onSuccess(res) {
       setFormValues({ email: "", fullName: "", message: "" });
+      navigate('/')
     },
   });
 
