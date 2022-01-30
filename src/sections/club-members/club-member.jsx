@@ -17,7 +17,7 @@ const socialsIcons = {
   Youtube,
 };
 
-const ClubMember = ({ img, name, description, website, socials , id}) => {
+const ClubMember = ({ img, name, description, website, socials, id }) => {
   const modal = useModal();
   const { t } = useTranslation();
   return (
@@ -46,13 +46,13 @@ const ClubMember = ({ img, name, description, website, socials , id}) => {
             {/*  {t("more_info")}*/}
             {/*</a>*/}
 
-             <div className="social-links flex mt-10">
+            {/* <div className="social-links flex mt-10">
               {socials?.map((social) => (
                 <a className="mr-7" href={social.value} target="_blank">
-                  <img src={socialsIcons[social.name]}  alt={social.name} />
+                  <img src={socialsIcons[social.name]} alt={social.name} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

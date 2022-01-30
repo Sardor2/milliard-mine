@@ -39,13 +39,13 @@ section.club-members {
   .circles {
     z-index: -1;
     position: absolute;
-    top: 4rem;
-    left: 0;
+    top: -25rem;
+    left: 0rem;
 
     @media (max-width: 768px) {
       max-width: 200px;
-      left: 0;
-      top: 2rem;
+      top: -6rem;
+      left: -10rem;
     }
   }
 
