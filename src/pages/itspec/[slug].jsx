@@ -59,7 +59,7 @@ const ItSpec = ({ params }) => {
               </Container>
             </Header>
             <section className="info-spec">
-              <AnimText title={t('founder').concat(" ").repeat(7)} />
+              <AnimText title={t("founder").concat(" ").repeat(7)} />
               <Container>
                 <div className="flex items-center xl:gap-32 md:gap-17 md:flex-row flex-col">
                   <div className="md:w-6/12 w-full mb-24 md:mb-0 flex md:block flex-col md:flex-col items-center md:items-start">
@@ -92,9 +92,9 @@ const ItSpec = ({ params }) => {
                       >
                         {t("contact")}
                       </Button>
-                      <a target="_blank" href={detail?.website}>
-                        {t("more_info")}
-                      </a>
+                      {/*<a target="_blank" href={detail?.website}>*/}
+                      {/*  {t("more_info")}*/}
+                      {/*</a>*/}
                     </div>
                     <div className="social">
                       <div className="social-links flex">
@@ -123,7 +123,7 @@ const ItSpec = ({ params }) => {
               title={detail?.title}
             />
             <section className="team">
-              <AnimText title={t('our_team').concat(' ').repeat(7)} />
+              <AnimText title={t("our_team").concat(" ").repeat(7)} />
               <Container>
                 <Swiper
                   navigation={true}
@@ -160,7 +160,7 @@ const ItSpec = ({ params }) => {
               </Container>
             </section>
             <section className="portfolio">
-              <AnimText title={t('portfolio').concat(" ").repeat(7)} />
+              <AnimText title={t("portfolio").concat(" ").repeat(7)} />
               <Container>
                 <Swiper
                   navigation={true}

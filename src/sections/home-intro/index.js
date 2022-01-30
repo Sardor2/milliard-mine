@@ -5,13 +5,15 @@ import Container from "../../components/container";
 import Flex from "../../components/flex";
 import Modal from "../../components/modal";
 import { useModal } from "../../hooks";
+import {useTranslation} from "react-i18next";
 
 const HomeIntro = ({ description = "", logo_url = "", title = "" }) => {
   const { open, onClose, onOpen } = useModal();
-
+  const {t }  = useTranslation()
 
   return (
     <section role={"header"} className={"intro-section"} id={"home-intro"}>
+
       <Container className={"flex-center"}>
         <div className={"intro-section__wrapper animate__fade-in"}>
           <div className="intro-section__wrapper__details animate__animated animate__fadeIn">
@@ -25,7 +27,7 @@ const HomeIntro = ({ description = "", logo_url = "", title = "" }) => {
                 onClick={onOpen}
               />
               <span className="intro-section__wrapper__details__line" />
-              <p>DISCOVER</p>
+              <p style={{textTransform: 'uppercase'}}>{t('discover')}</p>
               <Modal open={open} onClose={onClose}>
                 <iframe
                   width="700"
