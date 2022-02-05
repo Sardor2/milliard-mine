@@ -3,7 +3,7 @@ import "./styles.scss";
 import Container from "../../components/container";
 import { useInView } from "react-intersection-observer";
 
-const About = ({
+const AboutSection = ({
   images_url = [],
   description,
   info = [],
@@ -15,7 +15,6 @@ const About = ({
     triggerOnce: true,
   });
 
-  console.log(inView);
   return (
     <section className={"about"} id={"about"}>
       <Container>
@@ -36,10 +35,10 @@ const About = ({
             </div>
             <div className="aboutImg-bottom  flex sm:flex-wrap">
               <div className={`aboutImg-item ${animated ? "animated" : ""}`}>
-                <img src={images_url[2]} alt="" />
+                <img style={{ maxWidth: "164px" }} src={images_url[2]} alt="" />
               </div>
               <div className={`aboutImg-item ${animated ? "animated" : ""}`}>
-                <img src={images_url[3]} alt="" />
+                <img style={{ width: "356px" }} src={images_url[3]} alt="" />
               </div>
             </div>
           </div>
@@ -61,4 +60,4 @@ const About = ({
   );
 };
 
-export default About;
+export default AboutSection;

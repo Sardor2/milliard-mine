@@ -22,7 +22,7 @@ const ContactMemberForm = ({ onExitClick = () => null, memberId }) => {
         fullName: "",
         message: "",
       });
-      onExitClick()
+      onExitClick();
     },
   });
 

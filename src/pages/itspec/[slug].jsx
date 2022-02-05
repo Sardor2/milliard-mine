@@ -140,7 +140,7 @@ const ItSpec = ({ params }) => {
                       spaceBetween: 10,
                     },
                     968: {
-                      slidesPerView: 3,
+                      slidesPerView: 1,
                       spaceBetween: 32,
                     },
                   }}

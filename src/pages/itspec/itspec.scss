@@ -7,6 +7,7 @@
   }
   &-img {
     max-width: 350px;
+
   }
   &-name {
     font-family: "IntegralCF", sans-serif;
@@ -59,6 +60,16 @@
     font-family: "IntegralCF", sans-serif;
     font-size: 1.3rem;
   }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  img {
+    max-width: 400px;
+  }
 }
 
 .itspec {
@@ -86,16 +97,16 @@
         }
       }
     }
-    &-button-prev {
-      bottom: -3px;
-      left: 0;
-      top: inherit !important;
-    }
-    &-button-next {
-      bottom: -3px;
-      left: 40px;
-      top: inherit !important;
-    }
+    //&-button-prev {
+    //  bottom: -3px;
+    //  left: 0;
+    //  top: inherit !important;
+    //}
+    //&-button-next {
+    //  bottom: -3px;
+    //  left: 40px;
+    //  top: inherit !important;
+    //}
   }
 }
 
@@ -193,6 +204,7 @@
   .team {
     &-img {
       img {
+
         margin: auto;
       }
     }
