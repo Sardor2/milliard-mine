@@ -8,13 +8,11 @@ import facebook from "../../images/icons/Facebook.svg";
 import instagram from "../../images/icons/Instagram.svg";
 import twitter from "../../images/icons/Twitter.svg";
 import youtube from "../../images/icons/Youtube.svg";
-import infospec from "../../images/itspec/info-spec.png";
-import teamImg1 from "../../images/team/team1.png";
 
 import "./itspec.scss";
 import AnimText from "../../components/animText";
 import About from "../../sections/about";
-import useHomePageData from "../../services/use-home-page-data";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import SwiperCore, { Navigation, Pagination } from "swiper";
@@ -34,7 +32,8 @@ const ItSpec = ({ params }) => {
   const { data: detail, loading } = useBusinessDetail(params.slug);
   const { partners } = useHomeContext();
 
-  console.log(partners);
+  const fullName =
+    detail?.staffs && detail.staffs[0] && detail.staffs[0].full_name;
 
   const { t } = useTranslation();
   const modal = useModal();
@@ -67,23 +66,17 @@ const ItSpec = ({ params }) => {
                       <img src={detail?.avatar_url} alt="" />
                     </div>
                     <div className="info-teaser">
-                      <h3 className="info-name">{detail?.name}</h3>
+                      <h3 className="info-name">{fullName}</h3>
                     </div>
                     <div className="info-company">
                       <div className="info-company-item">
                         <img src={detail?.logo_url} alt={detail?.name} />
                       </div>
-                      {/* <div className="info-company-item">
-                        <img src={logo} alt="" />
-                      </div>
-                      <div className="info-company-item">
-                        <img src={logo} alt="" />
-                      </div> */}
                     </div>
                   </div>
                   <div className="md:w-6/12 w-full">
-                    <h2 className="info-title">{detail?.title}</h2>
-                    <p>{detail?.description}</p>
+                    <h2 className="info-title">{fullName}</h2>
+                    <p>{detail?.content}</p>
                     <div className="info-button-wrap">
                       <Button
                         onClick={modal.onOpen}
