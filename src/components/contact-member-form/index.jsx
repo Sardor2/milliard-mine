@@ -56,7 +56,7 @@ const ContactMemberForm = ({ onExitClick = () => null, memberId }) => {
           <Input
             value={formValues.fullName}
             onChange={handleChange}
-            label="Name"
+            label={t("name")}
             name="fullName"
             required
           />
@@ -66,7 +66,7 @@ const ContactMemberForm = ({ onExitClick = () => null, memberId }) => {
           <Input
             value={formValues.email}
             onChange={handleChange}
-            label="Email"
+            label={t("email")}
             name="email"
             type="email"
             required
