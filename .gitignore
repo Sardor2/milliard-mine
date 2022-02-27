@@ -5,4 +5,4 @@ public
 # Local Netlify folder
 .netlify
 
-public.zip
+./public.zip
