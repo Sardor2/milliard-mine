@@ -31,8 +31,13 @@ section.club-members {
   }
 
   .social-links {
-    img {
-      //display: ;
+    a {
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      transition: all 0.2s;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 

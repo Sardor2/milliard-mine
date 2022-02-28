@@ -47,7 +47,6 @@ const Partners = ({ partners }) => {
             //   type: "progressbar",
             // }}
             onSwiper={setSwiper}
-            loop
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,

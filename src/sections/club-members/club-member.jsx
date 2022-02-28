@@ -10,12 +10,12 @@ import ContactMemberForm from "../../components/contact-member-form";
 import { useModal } from "../../hooks";
 import { useTranslation } from "react-i18next";
 
-const socialsIcons = {
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
-};
+// const socialsIcons = {
+//   Facebook,
+//   Instagram,
+//   Twitter,
+//   Youtube,
+// };
 
 const ClubMember = ({ img, name, description, website, socials, id }) => {
   const modal = useModal();
@@ -38,19 +38,30 @@ const ClubMember = ({ img, name, description, website, socials, id }) => {
             <Button onClick={modal.onOpen} variant="filled">
               {t("contact")}
             </Button>
-            {/*<a*/}
-            {/*  href={website}*/}
-            {/*  target="_blank"*/}
-            {/*  className="website-link    font-poppins"*/}
-            {/*>*/}
-            {/*  {t("more_info")}*/}
-            {/*</a>*/}
+            <a
+              href={socials[0].value}
+              target="_blank"
+              className="website-link hover:opacity-80 hover:underline transition-opacity  font-poppins"
+            >
+              {t("more_info")}
+            </a>
 
             {/* <div className="social-links flex mt-10">
               {socials?.map((social) => (
-                <a className="mr-7" href={social.value} target="_blank">
-                  <img src={socialsIcons[social.name]} alt={social.name} />
-                </a>
+                <React.Fragment key={social.value}>
+                  <a className="mr-7" href={social.value} target="_blank">
+                    {social.name}
+                  </a>
+                  <a className="mr-7" href={social.value} target="_blank">
+                    {social.name}
+                  </a>{" "}
+                  <a className="mr-7" href={social.value} target="_blank">
+                    {social.name}
+                  </a>
+                  <a className="mr-7" href={social.value} target="_blank">
+                    {social.name}
+                  </a>
+                </React.Fragment>
               ))}
             </div> */}
           </div>
