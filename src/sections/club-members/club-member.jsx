@@ -1,10 +1,6 @@
 import React from "react";
 import "./styles.scss";
 import Button from "../../components/button";
-import Facebook from "../../images/icons/Facebook.svg";
-import Instagram from "../../images/icons/Instagram.svg";
-import Twitter from "../../images/icons/Twitter.svg";
-import Youtube from "../../images/icons/Youtube.png";
 import Modal from "../../components/modal";
 import ContactMemberForm from "../../components/contact-member-form";
 import { useModal } from "../../hooks";
@@ -38,13 +34,15 @@ const ClubMember = ({ img, name, description, website, socials, id }) => {
             <Button onClick={modal.onOpen} variant="filled">
               {t("contact")}
             </Button>
-            <a
-              href={socials[0].value}
-              target="_blank"
-              className="website-link hover:opacity-80 hover:underline transition-opacity  font-poppins"
-            >
-              {t("more_info")}
-            </a>
+            {socials[0].name && socials[0].value ? (
+              <a
+                href={socials[0].value}
+                target="_blank"
+                className="website-link hover:opacity-80 hover:underline transition-opacity  font-poppins"
+              >
+                {t("more_info")}
+              </a>
+            ) : null}
 
             {/* <div className="social-links flex mt-10">
               {socials?.map((social) => (
