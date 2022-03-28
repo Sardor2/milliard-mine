@@ -74,7 +74,7 @@ const ItSpec = ({ params }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="md:w-6/12 w-full">
+                  <div className="md:w-6/12 mt-10 mt mb-auto w-full">
                     <h2 className="info-title">{fullName}</h2>
                     <p>{detail?.content}</p>
                     <div className="info-button-wrap">
@@ -139,7 +139,7 @@ const ItSpec = ({ params }) => {
                   }}
                 >
                   {detail?.staffs?.map((member) => (
-                    <SwiperSlide key={member.id}>
+                    <SwiperSlide className={"team-slider"} key={member.id}>
                       <div className="team-img">
                         <img src={member.logo_url} alt="" />
                       </div>
