@@ -41,7 +41,7 @@ const BusinessesPage = ({ params }) => {
             </h2>
             <div className="business-cards justify-evenly flex mt-20 flex-wrap m-auto">
               {data?.map((item) => (
-                <Link to={`/itspec/${item.slug}`}>
+                <Link key={item.slug} to={`/itspec/${item.slug}`}>
                   <BusinessCard
                     className="mb-10"
                     key={item.id}
